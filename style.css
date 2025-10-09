@@ -1,42 +1,97 @@
-.cloud{ 
-   margin-top:70px;
-   width:350px;
-   height:120px;
-   background:#ECEFF1;
-   box-shadow: 10px 10px rgba(0,0,0,0.2);
-   border-radius:100px;
-}
-.cloud::after, .cloud::before{
-    content:"";
-    position:relative;
-    display:inline-block;
-    background:inherit;
-    border-radius:inherit;
-}
-.cloud::after{
-    width:100px;
-    height:100px;
-    top:-120px;
-    left:-140px;
-}
-.cloud::before{
-    width:180px;
-    height:180px;
-    top: -70px;
-    left:130px;
-}
-
-header, h1 {
+header,
+h1 {
     color: lightskyblue;
     font-family: Georgia, serif;
-    font-size: 20px;
     font-weight: bold;
 }
 
-header,section {
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-family: Georgia, serif;
+    color: lightskyblue;
+}
+
+header nav {
+    border-radius: 1em;
     background-color: whitesmoke;
 }
 
-body{
+section {
+    background-color: whitesmoke;
+}
+
+body {
     background-color: lightskyblue;
+}
+
+@media (max-width: 767px) {
+    .cloud {
+        background: whitesmoke;
+        width: 18vh;
+        height: 6vh;
+        border-radius: 4vh;
+        box-shadow: 0.5vh 0.5vh rgba(0, 0, 0, 0.2);
+    }
+
+    .cloud::after,
+    .cloud::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        background: inherit;
+        border-radius: inherit;
+    }
+
+    .cloud::before {
+        width: 7vh;
+        height: 7vh;
+        top: -3vh;
+        left: 7vh;
+    }
+
+    .cloud::after {
+        width: 5vh;
+        height: 5vh;
+        top: -4vh;
+        left: -4.5vh;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .cloud {
+        margin-top: 4vh;
+        width: 22vh;
+        height: 7vh;
+        background: whitesmoke;
+        box-shadow: 0.5vh 0.5vh rgba(0, 0, 0, 0.2);
+        border-radius: 6vh;
+    }
+
+    .cloud::after,
+    .cloud::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        background: inherit;
+        border-radius: inherit;
+    }
+
+    .cloud::after {
+        width: 6vh;
+        height: 6vh;
+        top: -6vh;
+        left: -6.5vh;
+    }
+
+    .cloud::before {
+        width: 10vh;
+        height: 10vh;
+        top: -4vh;
+        left: 9vh;
+    }
+
 }
