@@ -1,0 +1,42 @@
+.cloud{ 
+   margin-top:70px;
+   width:350px;
+   height:120px;
+   background:#ECEFF1;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+}
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+.cloud::after{
+    width:100px;
+    height:100px;
+    top:-120px;
+    left:-140px;
+}
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:130px;
+}
+
+header, h1 {
+    color: lightskyblue;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header,section {
+    background-color: whitesmoke;
+}
+
+body{
+    background-color: lightskyblue;
+}
