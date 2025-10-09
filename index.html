@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio of Ludovic WENG</title>
-</head>
+  </head>
 
-<body>
-    <header>
-        <div class="box-border border-2 border-blue p-1">
-            <nav class="flex flex-wrap justify-center gap-2">
-                <a href="">Home</a>
-                <p>|</p>
-                <a href="">About me</a>
-                <p>|</p>
-                <a href="">Projects</a>
-                <p>|</p>
-                <a href="">Contact</a>
-            </nav>
-        </div>
+  <body>
+    <header id="home" class="flex justify-center">
+      <nav class="inline-flex flex-wrap px-3 py-1 my-2 gap-2">
+        <a href="#home">Home</a>
+        <p>|</p>
+        <a href="#about">About me</a>
+        <p>|</p>
+        <a href="#projects">Projects</a>
+        <p>|</p>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <div class="flex justify-center gap-2 mt-7 mb-5">
+    <section>
+      <div class="flex justify-center gap-2 mt-7 mb-5">
         <div class="cloud"></div>
         <div class="cloud"></div>
         <div class="cloud"></div>
-    </div>
+      </div>
+    </section>
 
-    <section id="About me" class="text-center">
+    <section id="about" class="text-center">
+      <div class="inline-flex px-3 my-2">
         <h1>About me</h1>
-        <p>Bonjour</p>
-
+      </div>
+      <div class="inline-flex max-w-xs mt-5 px-3 py-3">
+        <p>
+          I'm Ludovic, a motivated and curious student at Epitech Paris,
+          passionate about building and learning through technology. Coming from
+          an electrical engineering background, I bring strong analytical and
+          problem-solving skills to the world of software development. I'm now
+          focusing on improving my coding abilities and collaborating on
+          projects that make an impact.
+        </p>
+      </div>
     </section>
 
-    <section id="Projects" class="text-center">
-        <h1>Projects</h1>
+    <section id="projects" class="text-center">
+      <h1>Projects</h1>
     </section>
 
-    <section id="Contact" class="text-center">
-        <h1>Contact</h1>
-        <nav>
-            <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Seizako" target="_blank">GitHub</a>
-            <a href="">Mail</a>
-        </nav>
+    <section id="contact" class="text-center">
+      <h1>Contact</h1>
+      <nav>
+        <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/Seizako" target="_blank">GitHub</a>
+        <a href="">Mail</a>
+      </nav>
     </section>
 
-    <img src="/image/LWE00356.JPG" alt="photo" class="w-40 pl-10">
+    <img src="/image/LWE00356.JPG" alt="photo" class="w-40 pl-10" />
 
-    <footer>
-
-    </footer>
-</body>
-
+    <footer></footer>
+  </body>
 </html>

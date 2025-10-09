@@ -10,6 +10,7 @@ h1 {
 }
 
 p {
+    font-size: 16px;
     font-family: Georgia, serif;
     color: lightskyblue;
 }
@@ -19,8 +20,14 @@ header nav {
     background-color: whitesmoke;
 }
 
-section {
+#about > div {
+    border-radius: 1em;
+    border-color: lightskyblue;
     background-color: whitesmoke;
+}
+
+section {
+    height: 100vh;
 }
 
 body {
