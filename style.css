@@ -46,6 +46,10 @@ p {
     background-color: whitesmoke;
 }
 
+input, textarea {
+    background-color: lightgray;
+}
+
 section {
     height: 100vh;
 }
