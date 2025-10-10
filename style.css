@@ -34,10 +34,6 @@ p {
     color: lightskyblue;
 }
 
-header nav {
-    background-color: whitesmoke;
-}
-
 #about > div {
     background-color: whitesmoke;
 }
@@ -85,6 +81,10 @@ section {
         top: -4vh;
         left: -4.5vh;
     }
+
+    header nav {
+    background-color: whitesmoke;
+}
 }
 
 @media (min-width: 768px) {
@@ -120,4 +120,8 @@ section {
         left: 9vh;
     }
 
+    header nav {
+    font-size: 38px;
+    background-color: whitesmoke;
+}
 }
