@@ -45,6 +45,7 @@
     <div class="inline-flex bg-white rounded-2xl px-3 my-2">
       <h1>About me</h1>
     </div>
+    <img src="/image/LWE00356.JPG" alt="photo" class="w-40 pl-10">
     <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
       <p>
         I'm Ludovic, a motivated and curious student at Epitech Paris,
@@ -72,24 +73,40 @@
     </div>
   </section>
 
-  <section id="contact" class="text-center relative">
+  <section id="contact" class="flex flex-col items-center gap-5 relative">
     <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
       <h1>Contact</h1>
     </div>
 
-    <nav>
+    <nav class="inline-flex rounded-2xl bg-white px-3 py-3">
       <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank">LinkedIn</a>
       <a href="https://github.com/Seizako" target="_blank">GitHub</a>
       <a href="">Mail</a>
     </nav>
+
+    <div class="inline-flex rounded-2xl px-3 py-3">
+      <form action="mailto:ludovicweng@hotmail.com" method="POST" enctype="text/plain">
+        <label for="name"> Last name :</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <br>
+        <label for="fname"> First name :</label><br>
+        <input type="text" id="fname" name="fname" required><br>
+        <br>
+        <label for="email"> Email :</label><br>
+        <input type="text" id="email" name="email" required><br>
+        <br>
+        <label for="question"> Question : </label><br>
+        <textarea id="question" class="" name="question" rows="8"></textarea><br>
+        <br>
+        <button type="submit"> Submit </button>
+      </form>
+    </div>
 
     <div class="absolute bottom-0 w-full">
       <div class="grass"></div>
       <div class="dirt"></div>
     </div>
   </section>
-
-  <img src="/image/LWE00356.JPG" alt="photo" class="w-40 pl-10">
 
   <footer></footer>
 </body>
