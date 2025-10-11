@@ -11,17 +11,15 @@
 </head>
 
 <body>
-  <header id="home" class="flex justify-center">
+  <header class="flex justify-center">
     <nav class="inline-flex rounded-2xl flex-wrap px-3 py-1 my-2 gap-2">
-      <div class="">
-      <a href="#home" class="hover:scale-120">Home</a>
-      </div>
+      <a href="#home" class="hover:scale-110">Home</a>
       <p>|</p>
-      <a href="#about" class="hover:scale-120">About me</a>
+      <a href="#about" class="hover:scale-110">About me</a>
       <p>|</p>
-      <a href="#projects" class="hover:scale-120">Projects</a>
+      <a href="#projects" class="hover:scale-110">Projects</a>
       <p>|</p>
-      <a href="#contact" class="hover:scale-120">Contact</a>
+      <a href="#contact" class="hover:scale-110">Contact</a>
     </nav>
   </header>
 
@@ -44,11 +42,15 @@
   </section>
 
   <section id="about" class="text-center relative">
-    <div class="inline-flex bg-white rounded-2xl px-3 my-2">
+    <div class="sun"></div>
+
+    <div class="inline-flex bg-white rounded-2xl px-3">
       <h1>About me</h1>
     </div>
-    <img src="/image/LWE00356.JPG" alt="photo" class="w-40 pl-10">
-    <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
+
+    <img src="/image/LWE00356.JPG" alt="photo">
+
+    <div class="inline-flex rounded-2xl max-w-xs px-3 py-3">
       <p>
         I'm Ludovic, a motivated and curious student at Epitech Paris,
         passionate about building and learning through technology. Coming from
@@ -59,34 +61,44 @@
       </p>
     </div>
     <div class="absolute bottom-0 w-full">
-      <div class="grass"></div>
+      <div class="sun_grass"></div>
       <div class="dirt"></div>
     </div>
   </section>
 
   <section id="projects" class="text-center relative">
+    <div class="leaves"></div>
+
     <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
       <h1>Projects</h1>
     </div>
 
     <div class="absolute bottom-0 w-full">
-      <div class="grass"></div>
+      <div class="autumn_grass"></div>
       <div class="dirt"></div>
     </div>
   </section>
 
   <section id="contact" class="flex flex-col items-center gap-5 relative">
+    <div class="snowflakes"></div>
+
     <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
       <h1>Contact</h1>
     </div>
 
     <nav class="inline-flex rounded-2xl bg-white px-3 py-3">
-      <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Seizako" target="_blank">GitHub</a>
-      <a href="">Mail</a>
+      <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank" class="flex items-center gap-2">
+        <i class="fa fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+
+      <a href="https://github.com/Seizako" target="_blank" class="flex items-center gap-2">
+        <i class="fa fa-github"></i>
+        <span>GitHub</span>
+      </a>
     </nav>
 
-    <div class="inline-flex rounded-2xl px-3 py-3">
+    <div class="inline-flex rounded-2xl px-5 py-2">
       <form action="mailto:ludovicweng@hotmail.com" method="POST" enctype="text/plain">
         <label for="name"> Last name :</label><br>
         <input type="text" id="name" name="name" required><br>
@@ -98,19 +110,23 @@
         <input type="text" id="email" name="email" required><br>
         <br>
         <label for="question"> Question : </label><br>
-        <textarea id="question" name="question" rows="8"></textarea><br>
+        <textarea id="question" name="question" rows="6"></textarea><br>
         <br>
-        <button type="submit"> Submit </button>
+        <button type="submit" class="items-center"> Submit </button>
       </form>
     </div>
 
     <div class="absolute bottom-0 w-full">
-      <div class="grass"></div>
+      <div class="snow_grass"></div>
       <div class="dirt"></div>
     </div>
   </section>
 
-  <footer></footer>
+  <footer class="text-center">
+    <p>&copy; Ludovic WENG 2025</p>
+    <p>Reproduction à des fins commerciales interdite</p>
+  </footer>
+
 </body>
 
 </html>

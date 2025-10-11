@@ -9,11 +9,45 @@ body {
     background: linear-gradient(to bottom, #4CAF50 0%, #388E3C 100%);
 }
 
+.autumn_grass {
+    width: 100%;
+    height: 3vh;
+    position: relative;
+    background: linear-gradient(to bottom, #CD853F 0%, #8B4513 100%);
+}
+
+.sun_grass {
+    width: 100%;
+    height: 3vh;
+    position: relative;
+    background: linear-gradient(to bottom, #9ACD32 0%, #6B8E23 100%);
+}
+
+.snow_grass {
+    width: 100%;
+    height: 3vh;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.5);
+}
+
 .dirt {
     width: 100%;
     height: 6vh;
     position: relative;
     background: linear-gradient(to bottom, #6D4C41 0%, #4E342E 100%);
+}
+
+.sun {
+    z-index: 1;
+    position: absolute;
+    top: 3vh;
+    left: 3vh;
+    width: 11vh;
+    height: 11vh;
+    background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 35px 5px yellow, 0 0 25px 10px yellow inset;
 }
 
 header {
@@ -31,23 +65,40 @@ h1 {
 p {
     font-size: 16px;
     font-family: Georgia, serif;
-    color: lightskyblue;
 }
 
-#about > div {
+#about>div {
     background-color: whitesmoke;
 }
 
-#projects > div {
+#about>img {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    border-radius: 1em;
+    width: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#projects>div {
     background-color: whitesmoke;
 }
 
-#contact > div {
+#contact>div {
     background-color: whitesmoke;
 }
 
-input, textarea {
-    background-color: lightgray;
+input,
+textarea {
+    border: 2px solid lightblue;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
 }
 
 section {
@@ -87,8 +138,23 @@ section {
     }
 
     header nav {
-    background-color: whitesmoke;
-}
+        font-size: 16px;
+        background-color: whitesmoke;
+    }
+
+    #contact nav i {
+        color: lightskyblue;
+        font-size: 4vh;
+    }
+
+    #contact nav a:hover {
+        transform: scale(1.1);
+    }
+
+    #contact nav span {
+        font-size: 18px;
+        font-family: Georgia, serif;
+    }
 }
 
 @media (min-width: 768px) {
@@ -125,7 +191,7 @@ section {
     }
 
     header nav {
-    font-size: 38px;
-    background-color: whitesmoke;
-}
+        font-size: 38px;
+        background-color: whitesmoke;
+    }
 }
