@@ -39,7 +39,6 @@ body {
 }
 
 .sun {
-    z-index: 1;
     position: absolute;
     top: 3vh;
     left: 3vh;
@@ -48,6 +47,7 @@ body {
     background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
     border-radius: 50%;
     box-shadow: 0 0 35px 5px yellow, 0 0 25px 10px yellow inset;
+    z-index: 1;
 }
 
 header {
@@ -57,9 +57,14 @@ header {
 }
 
 h1 {
+    color: lightskyblue;
     font-size: 40px;
     font-family: Georgia, serif;
     font-weight: bold;
+}
+
+#home h1 {
+    color: white;
 }
 
 p {
@@ -78,6 +83,8 @@ p {
     width: 20vh;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 10;
 }
 
 #projects>div {
@@ -88,11 +95,21 @@ p {
     background-color: whitesmoke;
 }
 
+.button {
+    font-weight: bold;
+    border: 2px solid lightskyblue;
+    border-radius: 1em;
+    margin-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 input,
 textarea {
-    border: 2px solid lightblue;
+    border: 2px solid lightskyblue;
     border-radius: 1em;
     padding: 0.5em;
+    width: 18em;
 }
 
 input:focus,
@@ -103,6 +120,13 @@ textarea:focus {
 
 section {
     height: 100vh;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-top: -6vh;
 }
 
 @media (max-width: 767px) {
@@ -140,6 +164,12 @@ section {
     header nav {
         font-size: 16px;
         background-color: whitesmoke;
+    }
+
+    #links, 
+    #forms {
+        gap: 1em;
+        margin-top: 0.5em;
     }
 
     #contact nav i {

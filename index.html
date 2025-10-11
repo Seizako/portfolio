@@ -31,8 +31,7 @@
     </div>
 
     <div class="text-white text-center">
-      <h1>LUDOVIC</h1>
-      <h1>WENG</h1>
+      <h1>LUDOVIC <br> WENG</h1>
     </div>
 
     <div class="absolute bottom-0 w-full">
@@ -44,7 +43,7 @@
   <section id="about" class="text-center relative">
     <div class="sun"></div>
 
-    <div class="inline-flex bg-white rounded-2xl px-3">
+    <div class="inline-flex bg-white rounded-2xl px-3 relative z-10">
       <h1>About me</h1>
     </div>
 
@@ -82,11 +81,11 @@
   <section id="contact" class="flex flex-col items-center gap-5 relative">
     <div class="snowflakes"></div>
 
-    <div class="inline-flex rounded-2xl max-w-xs mt-5 px-3 py-3">
+    <div class="inline-flex rounded-2xl max-w-xs px-3 py-3">
       <h1>Contact</h1>
     </div>
 
-    <nav class="inline-flex rounded-2xl bg-white px-3 py-3">
+    <nav id="links" class="inline-flex rounded-2xl bg-white px-3 py-3">
       <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank" class="flex items-center gap-2">
         <i class="fa fa-linkedin"></i>
         <span>LinkedIn</span>
@@ -98,21 +97,21 @@
       </a>
     </nav>
 
-    <div class="inline-flex rounded-2xl px-5 py-2">
+    <div id="forms" class="inline-flex rounded-2xl px-5 py-2">
       <form action="mailto:ludovicweng@hotmail.com" method="POST" enctype="text/plain">
         <label for="name"> Last name :</label><br>
         <input type="text" id="name" name="name" required><br>
-        <br>
+        
         <label for="fname"> First name :</label><br>
         <input type="text" id="fname" name="fname" required><br>
-        <br>
+        
         <label for="email"> Email :</label><br>
         <input type="text" id="email" name="email" required><br>
-        <br>
+        
         <label for="question"> Question : </label><br>
-        <textarea id="question" name="question" rows="6"></textarea><br>
-        <br>
-        <button type="submit" class="items-center"> Submit </button>
+        <textarea id="question" name="question" rows="8"></textarea><br>
+        
+        <button type="submit" class="button"> Submit </button>
       </form>
     </div>
 
@@ -122,7 +121,7 @@
     </div>
   </section>
 
-  <footer class="text-center">
+  <footer>
     <p>&copy; Ludovic WENG 2025</p>
     <p>Reproduction à des fins commerciales interdite</p>
   </footer>
