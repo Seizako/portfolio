@@ -1,5 +1,5 @@
 body {
-    background-color: lightskyblue;
+    background-color: skyblue;
 }
 
 .grass {
@@ -51,7 +51,7 @@ body {
 }
 
 header {
-    color: lightskyblue;
+    color: skyblue;
     font-family: Georgia, serif;
     font-weight: bold;
 }
@@ -60,12 +60,12 @@ h1 {
     color: white;
     font-size: 2.5em;
     font-family: Georgia, serif;
-    font-weight: bold;
+    font-weight: 900;
     margin-top: 22.5vh;
 }
 
 h2 {
-    color: lightskyblue;
+    color: skyblue;
     font-size: 2em;
     font-family: Georgia, serif;
     font-weight: bold;
@@ -78,6 +78,7 @@ p {
 
 #about>div {
     background-color: whitesmoke;
+    color: #5D4037;
 }
 
 #about>img {
@@ -100,17 +101,29 @@ p {
 }
 
 .button {
+    color: skyblue;
     font-weight: bold;
-    border: 2px solid lightskyblue;
+    border: 2px solid skyblue;
     border-radius: 1em;
     margin-top: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 input,
 textarea {
-    border: 2px solid lightskyblue;
+    border: 2px solid skyblue;
     border-radius: 1em;
     padding: 0.5em;
     width: 18em;
@@ -166,18 +179,45 @@ footer {
     }
 
     header nav {
-        font-size: 16px;
+        font-size: 1em;
         background-color: whitesmoke;
+    }
+
+    h3 {
+        font-size: 1.25em;
+        color: #CD853F;
+        font-weight: bold;
+    }
+
+    #project_box p {
+        color: #5D4037;
+    }
+
+    #project_box {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-top: 3vh;
+        inline-size: auto;
+        background-color: white;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+
+    #project_box:hover {
+        transform: scale(1.1);
     }
 
     #links, 
     #forms {
         gap: 1em;
-        margin-top: 0.5em;
+        margin-top: 1em;
     }
 
     #contact nav i {
-        color: lightskyblue;
+        color: skyblue;
         font-size: 4vh;
     }
 
@@ -185,7 +225,8 @@ footer {
         transform: scale(1.1);
     }
 
-    #contact nav span {
+    span {
+        color: skyblue;
         font-size: 18px;
         font-family: Georgia, serif;
     }
