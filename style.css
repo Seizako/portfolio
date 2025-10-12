@@ -2,6 +2,57 @@ body {
     background-color: skyblue;
 }
 
+header {
+    color: skyblue;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_hamburger {
+    cursor: pointer;
+    padding: 0.5em;
+    z-index: 10;
+    border-radius: 1em;
+    background-color: white;
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+}
+
+.menu_hamburger i {
+    color: skyblue;
+    font-size: 1.5em;
+}
+
+.menu_hamburger:hover {
+    transform: scale(1.05);
+}
+
+#menu {
+    display: none;
+    background-color: white;
+    border: 1em;
+    gap: 0.5em;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 1em;
+    height: 2.5em
+}
+
+#menu.active {
+    display: flex;
+}
+
 .grass {
     width: 100%;
     height: 3vh;
@@ -50,12 +101,6 @@ body {
     z-index: 1;
 }
 
-header {
-    color: skyblue;
-    font-family: Georgia, serif;
-    font-weight: bold;
-}
-
 h1 {
     color: white;
     font-size: 2.5em;
@@ -89,7 +134,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    z-index: 10;
+    z-index: 5;
 }
 
 #projects>div {
@@ -100,7 +145,7 @@ p {
     background-color: whitesmoke;
 }
 
-.button {
+#forms .button {
     color: skyblue;
     font-weight: bold;
     border: 2px solid skyblue;
@@ -113,7 +158,7 @@ p {
     margin-right: auto;
 }
 
-button:hover {
+#forms .button:hover {
     transform: scale(1.1);
     background-color: skyblue;
     color: white;
