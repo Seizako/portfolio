@@ -141,6 +141,14 @@ p {
     background-color: whitesmoke;
 }
 
+#project_box p {
+    color: #5D4037;
+}
+
+#project_box:hover {
+    transform: scale(1.1);
+}
+
 #contact>div {
     background-color: whitesmoke;
 }
@@ -234,8 +242,9 @@ footer {
         font-weight: bold;
     }
 
-    #project_box p {
-        color: #5D4037;
+    #presentation {
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
     #project_box {
@@ -245,17 +254,15 @@ footer {
         padding-left: 0.5em;
         padding-right: 0.5em;
         margin-top: 3vh;
+        margin-left: 1em;
+        margin-right: 1em;
         inline-size: auto;
         background-color: white;
         border-radius: 1em;
         cursor: pointer;
     }
 
-    #project_box:hover {
-        transform: scale(1.1);
-    }
-
-    #links, 
+    #links,
     #forms {
         gap: 1em;
         margin-top: 1em;
@@ -313,5 +320,61 @@ footer {
     header nav {
         font-size: 38px;
         background-color: whitesmoke;
+    }
+
+    h3 {
+        font-size: 1.25em;
+        color: #CD853F;
+        font-weight: bold;
+    }
+
+    #about img {
+        height: 15em;
+        width: 15em;
+        margin-top: 3em;
+    }
+
+    #presentation {
+        margin-top: 1em;
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+
+    #project_box {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-top: 5vh;
+        margin-left: 5vh;
+        margin-right: 5vh;
+        inline-size: auto;
+        background-color: white;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+
+    #links,
+    #forms {
+        gap: 1em;
+        margin-top: 3vh;
+    }
+
+    #contact nav i {
+        color: skyblue;
+        font-size: 4vh;
+    }
+
+    #contact nav a:hover {
+        transform: scale(1.1);
+    }
+
+    span {
+        color: skyblue;
+        font-size: 18px;
+        font-family: Georgia, serif;
     }
 }
