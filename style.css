@@ -11,8 +11,10 @@ header {
     top: 0;
     right: 0;
     left: 0;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0.5em;
 }
 
 .menu_hamburger {
@@ -26,7 +28,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    order: 2;
 }
 
 .menu_hamburger i {
@@ -41,16 +42,23 @@ header {
 #menu {
     display: none;
     background-color: white;
-    border: 1em;
+    border-radius: 1em;
     gap: 0.5em;
     align-items: center;
-    margin-right: auto;
-    margin-left: 1em;
-    height: 2.5em
 }
 
 #menu.active {
     display: flex;
+}
+
+#menu a {
+    padding: 0.75em 1em;
+    text-decoration: none;
+    color: skyblue;
+}
+
+#menu a:hover {
+    transform: scale(1.05);
 }
 
 .grass {
@@ -122,7 +130,7 @@ p {
 }
 
 #about>div {
-    background-color: whitesmoke;
+    background-color: white;
     color: #5D4037;
 }
 
@@ -138,7 +146,7 @@ p {
 }
 
 #projects>div {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 #project_box p {
@@ -150,7 +158,7 @@ p {
 }
 
 #contact>div {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 #forms .button {
@@ -200,8 +208,32 @@ footer {
 }
 
 @media (max-width: 767px) {
+    #menu {
+        position: fixed;
+        top: 0.5em;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        padding: 0.75em 1em;
+        min-width: 100px;
+        text-align: center;
+        gap: 0.5em;
+    }
+
+    #menu p {
+        display: none;
+    }
+
+    #menu a {
+        padding: 0.5em 0.75em;
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-size: 1.2em;
+    }
+
     .cloud {
-        background: whitesmoke;
+        background: white;
         width: 18vh;
         height: 6vh;
         border-radius: 4vh;
@@ -233,7 +265,7 @@ footer {
 
     header nav {
         font-size: 1em;
-        background-color: whitesmoke;
+        background-color: white;
     }
 
     h3 {
@@ -282,14 +314,33 @@ footer {
         font-size: 18px;
         font-family: Georgia, serif;
     }
+
 }
 
 @media (min-width: 768px) {
+    #menu {
+        position: static;
+        flex-direction: row;
+        transform: none;
+        margin-right: 1em;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 0.5em 1em;
+    }
+
+    #menu p {
+        display: block;
+        margin: 0 0.5em;
+    }
+
+    #menu a {
+        padding: 0.5em 0.75em;
+    }
+
     .cloud {
         margin-top: 4vh;
         width: 22vh;
         height: 7vh;
-        background: whitesmoke;
+        background: white;
         box-shadow: 0.5vh 0.5vh rgba(0, 0, 0, 0.2);
         border-radius: 6vh;
     }
@@ -319,7 +370,7 @@ footer {
 
     header nav {
         font-size: 38px;
-        background-color: whitesmoke;
+        background-color: white;
     }
 
     h3 {
