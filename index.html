@@ -10,32 +10,42 @@
   <title>Portfolio of Ludovic WENG</title>
 </head>
 
-<body>
-  <header class="flex justify-center">
-    <button id="menu_button" class="menu_hamburger">
-      <i class="fa fa-bars"></i>
+<body class="bg-[skyblue]">
+  <header class="fixed top-0 right-0 left-0 flex justify-end items-start p-2 z-10">
+    <button id="menu_button"
+      class="menu_hamburger cursor-pointer p-2 rounded-2xl bg-white/80 w-12 h-12 flex items-center justify-center hover:scale-105">
+      <i class="fa fa-bars text-[skyblue] text-2xl"></i>
     </button>
 
-    <nav id="menu" class="inline-flex rounded-2xl flex-wrap px-3 py-1 my-2">
-      <a href="#home" class="hover:scale-105">Home</a>
-      <p>|</p>
-      <a href="#about" class="hover:scale-105">About me</a>
-      <p>|</p>
-      <a href="#projects" class="hover:scale-105">Projects</a>
-      <p>|</p>
-      <a href="#contact" class="hover:scale-105">Contact</a>
+    <nav id="menu" class="hidden rounded-2xl px-3 py-1 bg-white/80 gap-2 items-center font-bold text-[skyblue]">
+      <a href="#home" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Home</a>
+      <p class="hidden md:block mx-2">|</p>
+      <a href="#about" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">About me</a>
+      <p class="hidden md:block mx-2">|</p>
+      <a href="#projects" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Projects</a>
+      <p class="hidden md:block mx-2">|</p>
+      <a href="#contact" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Contact</a>
     </nav>
   </header>
 
   <section id="home">
-    <div class="flex justify-center gap-2 mt-7 mb-5">
+    <div class="rain"></div>
+
+    <div id="clouds-container" class="flex justify-center gap-2 mt-7 mb-5">
       <div class="cloud"></div>
       <div class="cloud"></div>
       <div class="cloud"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
     </div>
 
     <div class="text-white text-center">
-      <h1>LUDOVIC <br> WENG</h1>
+      <h1 class="text-white text-[2.5rem] font-black mt-[22.5vh]">LUDOVIC WENG</h1>
+      <p class="text-white font-semibold mt-3 tracking-wide">
+      Looking for a DevOps Apprenticeship
+    </p>
     </div>
 
     <div class="absolute bottom-0 w-full">
@@ -44,16 +54,17 @@
     </div>
   </section>
 
-  <section id="about" class="text-center relative">
+  <section id="about" class="text-center">
     <div class="sun"></div>
 
-    <div class="inline-flex bg-white rounded-2xl px-3 relative z-5">
-      <h2>About me</h2>
+    <div class="inline-flex bg-white rounded-2xl mt-4 md:mt-[4vh] px-3 relative z-10">
+      <h2 class="text-[skyblue] text-[2rem] font-bold">About me</h2>
     </div>
 
-    <img src="./image/LWE00356.JPG" alt="photo">
+    <img src="./image/LWE00356.JPG" alt="photo"
+      class="mt-[3vh] md:mt-[4vh] mb-[5vh] rounded-2xl w-[20vh] md:w-[15rem] md:h-[15rem] mx-auto relative z-10">
 
-    <div id="presentation" class="inline-flex rounded-2xl px-3 py-3">
+    <div id="presentation" class="inline-flex bg-white text-[#5D4037] rounded-2xl px-3 py-3 mx-4 md:mx-32 md:mt-4">
       <p>
         I'm Ludovic, a motivated and curious student at Epitech Paris,
         passionate about building and learning through technology. Coming from
@@ -63,33 +74,34 @@
         projects that make an impact.
       </p>
     </div>
-    
+
     <div class="absolute bottom-0 w-full">
       <div class="sun_grass"></div>
       <div class="dirt"></div>
     </div>
   </section>
 
-  <section id="projects" class="flex flex-col items-center relative">
-    <div class="leaves"></div>
+  <section id="projects" class="flex flex-col items-center">
 
-    <div class="inline-flex rounded-2xl max-w-xs mt-3 px-3 py-2">
-      <h2>Projects</h2>
+    <div class="inline-flex bg-white rounded-2xl max-w-xs mt-4 md:mt-[4vh] px-3 py-2">
+      <h2 class="text-[skyblue] text-[2rem] font-bold">Projects</h2>
     </div>
 
-    <a href="https://seizako.github.io/digitalresume/" target="_blank">
-      <div id="project_box">
-        <h3>Digital Resume</h3>
-        <p>A responsive personal resume website built from scratch using HTML and CSS.
+    <a href="https://seizako.github.io/digitalresume/" target="_blank" class="w-full flex justify-center">
+      <div
+        class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
+        <h3 class="text-[1.25rem] text-[#CD853F] font-bold">Digital Resume</h3>
+        <p class="text-[#5D4037]">A responsive personal resume website built from scratch using HTML and CSS.
           Completed independently within a 4-day timeframe, this project demonstrates
           core web development skills including semantic markup, CSS styling, and
           responsive design principles.</p>
       </div>
     </a>
 
-    <div id="project_box">
-      <h3>Job Board Platform</h3>
-      <p>A full-stack job advertisement platform developed collaboratively by a team
+    <div
+      class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
+      <h3 class="text-[1.25rem] text-[#CD853F] font-bold">Job Board Platform</h3>
+      <p class="text-[#5D4037]">A full-stack job advertisement platform developed collaboratively by a team
         of 3 developers. Features include user authentication, job posting management,
         and an admin dashboard with CRUD operations. Built with HTML/CSS, JavaScript,
         Tailwind CSS for the frontend, and Node.js with Express.js and MySQL for the
@@ -102,40 +114,47 @@
     </div>
   </section>
 
-  <section id="contact" class="flex flex-col items-center relative">
-    <div class="snowflakes"></div>
+  <section id="contact" class="flex flex-col items-center">
+    <div class="snow"></div>
 
-    <div class="inline-flex rounded-2xl max-w-xs mt-3 px-3 py-2">
-      <h2>Contact</h2>
+    <div class="inline-flex bg-white rounded-2xl max-w-xs mt-4 md:mt-[4vh] px-3 py-2 z-10">
+      <h2 class="text-[skyblue] text-[2rem] font-bold">Contact</h2>
     </div>
 
-    <nav id="links" class="inline-flex rounded-2xl bg-white px-2 py-2">
-      <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank" class="flex items-center gap-2">
-        <i class="fa fa-linkedin"></i>
-        <span>LinkedIn</span>
+    <nav id="links" class="flex flex-wrap justify-center bg-white rounded-2xl px-4 py-4 gap-4 mt-4 md:mt-[4vh] z-10">
+
+      <a href="https://www.linkedin.com/in/ludovic-weng/" target="_blank"
+        class="flex items-center gap-2 hover:scale-110">
+        <i class="fa fa-linkedin text-[skyblue]"></i>
+        <span class="text-[skyblue] text-[1.25rem]">LinkedIn</span>
       </a>
 
-      <a href="https://github.com/Seizako" target="_blank" class="flex items-center gap-2">
-        <i class="fa fa-github"></i>
-        <span>GitHub</span>
+      <a href="https://github.com/Seizako" target="_blank"
+        class="flex items-center gap-2 hover:scale-110">
+        <i class="fa fa-github text-[skyblue]"></i>
+        <span class="text-[skyblue] text-[1.25rem]">GitHub</span>
       </a>
     </nav>
 
-    <div id="forms" class="inline-flex rounded-2xl px-5 py-2">
-      <form action="mailto:ludovicweng@hotmail.com" method="POST" enctype="text/plain">
-        <label for="name"> Last name :</label><br>
-        <input type="text" id="name" name="name" required><br>
+    <a href="CV_Ludovic_WENG.pdf" download
+        class="flex items-center gap-2 bg-[skyblue] text-white my-2 md:mt-[4vh] px-4 py-2 rounded-xl hover:scale-110 hover:bg-[#4a9fd6]">
+        <i class="fa fa-download"></i>
+        <span class="text-[1.25rem]">Download CV</span>
+      </a>
 
-        <label for="fname"> First name :</label><br>
-        <input type="text" id="fname" name="fname" required><br>
-
+    <div id="forms" class="inline-flex bg-white rounded-2xl px-5 py-2 gap-4 md:mt-[4vh] z-10">
+      <form action="https://formspree.io/f/mpwowrjb" method="POST">
         <label for="email"> Email :</label><br>
-        <input type="text" id="email" name="email" required><br>
+        <input type="text" id="email" name="email" required
+          class="border-2 border-[skyblue] rounded-2xl p-2 w-72 focus:outline-none focus:border-[#4CAF50]"><br>
 
         <label for="question"> Question : </label><br>
-        <textarea id="question" name="question" rows="8"></textarea><br>
+        <textarea id="question" name="question" rows="8"
+          class="border-2 border-[skyblue] rounded-2xl p-2 w-72 focus:outline-none focus:border-[#4CAF50]"></textarea><br>
 
-        <button type="submit" class="button"> Submit </button>
+        <button type="submit"
+          class="text-[skyblue] font-bold border-2 border-[skyblue] rounded-2xl mt-2 px-4 flex mx-auto hover:scale-110 hover:bg-[skyblue] hover:text-white transition-all duration-500 cursor-pointer">
+          Submit </button>
       </form>
     </div>
 
@@ -145,7 +164,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="text-center text-white relative -mt-[6vh]">
     <p>&copy; Ludovic WENG 2025</p>
     <p>Reproduction à des fins commerciales interdite</p>
   </footer>
