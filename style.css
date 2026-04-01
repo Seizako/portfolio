@@ -243,10 +243,14 @@ section {
         margin: 2rem;
     }
     
-    #projects > a > div,
-    #projects > div.flex {
+    #projects > div > a > div {
         max-width: 80vh;
         padding: 1.5rem;
+    }
+
+    #projects-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #CD853F transparent;
     }
 }
 

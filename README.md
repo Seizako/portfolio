@@ -1,6 +1,6 @@
 # Portfolio de Ludovic WENG
 
-Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web a été conçu pour présenter mon profil, mes compétences et mes projets, dans le cadre de ma recherche d'alternance en **DevOps**.
+Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web a été conçu pour présenter mon profil, mes compétences et mes projets, dans le cadre de ma recherche d'alternance en informatique.
 
 Le portfolio présente une approche créative en utilisant des thèmes saisonniers (pluie, soleil, automne, neige) pour chaque section, offrant une expérience utilisateur unique et visuellement engageante.
 
