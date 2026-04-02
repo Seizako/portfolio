@@ -24,6 +24,68 @@ section {
     overflow: hidden;
 }
 
+.name {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    opacity: 0;
+    animation: fadeInDown 0.8s ease forwards 0.3s;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.25);
+    letter-spacing: 0.05em;
+}
+
+.subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+    opacity: 0;
+    animation: fadeInDown 0.8s ease forwards 0.7s;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    animation: fadeInDown 0.8s ease forwards 1.2s;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    animation: scrollBounce 1.2s ease infinite;
+}
+
+.scroll-indicator span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.scroll-indicator span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
 #menu.active {
     display: flex !important;
 }
