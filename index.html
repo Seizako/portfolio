@@ -12,19 +12,24 @@
 
 <body class="bg-[skyblue]">
   <header class="fixed top-0 right-0 left-0 flex justify-end items-start p-2 z-10">
+    <button id="lang-toggle" onclick="toggleLang()"
+      class="cursor-pointer p-2 rounded-2xl bg-white/80 w-12 h-12 flex items-center justify-center hover:scale-105 mr-2 font-bold text-[skyblue]">
+      FR
+    </button>
+
     <button id="menu_button"
       class="menu_hamburger cursor-pointer p-2 rounded-2xl bg-white/80 w-12 h-12 flex items-center justify-center hover:scale-105">
       <i class="fa fa-bars text-[skyblue] text-2xl"></i>
     </button>
 
     <nav id="menu" class="hidden rounded-2xl px-3 py-1 bg-white/80 gap-2 items-center font-bold text-[skyblue]">
-      <a href="#home" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Home</a>
+      <a href="#home" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2" data-i18n="nav.home">Home</a>
       <p class="hidden md:block mx-2">|</p>
-      <a href="#about" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">About me</a>
+      <a href="#about" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2" data-i18n="nav.about">About me</a>
       <p class="hidden md:block mx-2">|</p>
-      <a href="#projects" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Projects</a>
+      <a href="#projects" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2" data-i18n="nav.projects">Projects</a>
       <p class="hidden md:block mx-2">|</p>
-      <a href="#contact" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2">Contact</a>
+      <a href="#contact" class="hover:scale-105 px-3 py-2 md:px-3 md:py-2" data-i18n="nav.contact">Contact</a>
     </nav>
   </header>
 
@@ -43,7 +48,7 @@
 
     <div class="text-white text-center">
       <h1 class="text-white font-black mt-[22.5vh] name">LUDOVIC WENG</h1>
-      <p class="text-white font-semibold mt-3 tracking-widest subtitle">
+      <p class="text-white font-semibold mt-3 tracking-widest subtitle" data-i18n="home.subtitle">
         Epitech Student | Looking for an Apprenticeship
       </p>
     </div>
@@ -64,20 +69,15 @@
     <div class="sun"></div>
 
     <div class="inline-flex bg-white rounded-2xl mt-4 md:mt-[4vh] px-3 relative z-10">
-      <h2 class="text-[skyblue] text-[2rem] font-bold">About me</h2>
+      <h2 class="text-[skyblue] text-[2rem] font-bold" data-i18n="about.title">About me</h2>
     </div>
 
     <img src="./image/LWE00356.JPG" alt="photo"
       class="mt-[3vh] md:mt-[4vh] mb-[5vh] rounded-2xl w-[20vh] md:w-[15rem] md:h-[15rem] mx-auto relative z-10">
 
     <div id="presentation" class="inline-flex bg-white text-[#5D4037] rounded-2xl px-3 py-3 mx-4 md:mx-32 md:mt-4">
-      <p>
-        I'm Ludovic, a motivated and curious student at Epitech Paris,
-        passionate about building and learning through technology. Coming from
-        an electrical engineering background, I bring strong analytical and
-        problem-solving skills to the world of software development. I'm now
-        focusing on improving my coding abilities and collaborating on
-        projects that make an impact.
+      <p data-i18n="about.text">
+        I moved from electrical engineering to software when I realized I needed to actually see what I build. A game you can play, a website you can click through. That immediate feedback is what got me hooked. I'm currently studying at Epitech Paris, working toward a specific goal and building the skills to get there. Outside of code, I recently got back into digital art on my iPad. Not good yet, but it's a start.
       </p>
     </div>
 
@@ -90,7 +90,7 @@
   <section id="projects" class="flex flex-col items-center">
 
     <div class="inline-flex bg-white rounded-2xl max-w-xs mt-4 md:mt-[4vh] px-3 py-2">
-      <h2 class="text-[skyblue] text-[2rem] font-bold">Projects</h2>
+      <h2 class="text-[skyblue] text-[2rem] font-bold" data-i18n="projects.title">Projects</h2>
     </div>
 
     <div id="projects-scroll" class="overflow-y-auto relative mt-[2vh] w-full md:w-auto" style="max-height: calc(81vh - 3rem); overscroll-behavior: contain; min-width: min(90vw, 600px);">
@@ -98,8 +98,8 @@
       <a href="https://github.com/Seizako/nexus" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold">Nexus - Real-Time Chat Application</h3>
-          <p class="text-[#5D4037]">A Discord-like real-time chat application built with Rust, developed collaboratively by a team of 4.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.nexus.title">Nexus - Real-Time Chat Application</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.nexus.desc">A Discord-like real-time chat application built with Rust, developed collaboratively by a team of 4.
             Features include user authentication, server and channel management, real-time messaging via WebSockets,
             and message history. Built with a focus on performance, memory safety, and clean architecture
             using Rust's ownership model and async programming patterns.</p>
@@ -110,8 +110,8 @@
         class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold">EPITALE - RPG Adventure Game</h3>
-          <p class="text-[#5D4037]">A 2D top-down RPG adventure game built in Java using LibGDX framework.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.epitale.title">EPITALE - RPG Adventure Game</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.epitale.desc">A 2D top-down RPG adventure game built in Java using LibGDX framework.
             Developed collaboratively by a team of 3 following OOP principles. Features include
             turn-based combat with bullet hell elements, exploration system, NPC dialogues, and
             morality mechanics. Includes comprehensive UML diagrams, JaCoCo test coverage,
@@ -122,8 +122,8 @@
       <a href="https://github.com/Seizako/hungerjob" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold">Job Board Platform</h3>
-          <p class="text-[#5D4037]">A full-stack job advertisement platform developed collaboratively by a team
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.jobboard.title">HungerJob - Job Board Platform</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.jobboard.desc">A full-stack job advertisement platform developed collaboratively by a team
             of 3 developers. Features include user authentication, job posting management,
             and an admin dashboard with CRUD operations. Built with HTML/CSS, JavaScript,
             Tailwind CSS for the frontend, and Node.js with Express.js and MySQL for the
@@ -134,8 +134,8 @@
       <a href="https://github.com/Seizako/digitalresume" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold">Digital Resume</h3>
-          <p class="text-[#5D4037]">A responsive personal resume website built from scratch using HTML and CSS.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.digitalresume.title">Digital Resume</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.digitalresume.desc">A responsive personal resume website built from scratch using HTML and CSS.
             Completed independently within a 4-day timeframe, this project demonstrates
             core web development skills including semantic markup, CSS styling, and
             responsive design principles.</p>
@@ -154,7 +154,7 @@
     <div class="snow"></div>
 
     <div class="inline-flex bg-white rounded-2xl max-w-xs mt-4 md:mt-[4vh] px-3 py-2 z-10">
-      <h2 class="text-[skyblue] text-[2rem] font-bold">Contact</h2>
+      <h2 class="text-[skyblue] text-[2rem] font-bold" data-i18n="contact.title">Contact</h2>
     </div>
 
     <nav id="links" class="flex flex-wrap justify-center bg-white rounded-2xl px-4 py-4 gap-4 mt-4 md:mt-[4vh] z-10">
@@ -174,22 +174,22 @@
     <a href="documents/Ludovic_Weng_CV.pdf" download
       class="flex items-center gap-2 bg-[skyblue] text-white mt-4 md:mt-[4vh] px-4 py-2 rounded-xl hover:scale-110 hover:bg-[#4a9fd6]">
       <i class="fa fa-download"></i>
-      <span class="text-[1.25rem]">Download CV</span>
+      <span class="text-[1.25rem]" data-i18n="contact.download">Download CV</span>
     </a>
 
     <div id="forms" class="flex bg-white rounded-2xl px-5 py-2 gap-4 mt-4 md:mt-[4vh] z-10">
       <form action="https://formspree.io/f/mpwowrjb" method="POST">
-        <label for="email"> Email :</label><br>
+        <label for="email" data-i18n="contact.email"> Email :</label><br>
         <input type="email" id="email" name="email" required
           class="border-2 border-[skyblue] rounded-2xl p-2 w-72 focus:outline-none focus:border-[#4CAF50]"><br>
 
-        <label for="question"> Question : </label><br>
+        <label for="question" data-i18n="contact.message"> Message : </label><br>
         <textarea id="question" name="question" rows="8"
           class="border-2 border-[skyblue] rounded-2xl p-2 w-72 focus:outline-none focus:border-[#4CAF50]"></textarea><br>
 
         <button type="submit"
-          class="text-[skyblue] font-bold border-2 border-[skyblue] rounded-2xl mt-2 px-4 flex mx-auto hover:scale-110 hover:bg-[skyblue] hover:text-white transition-all duration-500 cursor-pointer">
-          Submit </button>
+          class="text-[skyblue] font-bold border-2 border-[skyblue] rounded-2xl mt-2 px-4 flex mx-auto hover:scale-110 hover:bg-[skyblue] hover:text-white transition-all duration-500 cursor-pointer"
+          data-i18n="contact.submit">Submit</button>
       </form>
     </div>
 
@@ -201,7 +201,7 @@
 
   <footer class="text-center text-white relative -mt-[6vh]">
     <p>&copy; Ludovic WENG 2025</p>
-    <p>Reproduction à des fins commerciales interdite</p>
+    <p data-i18n="footer.rights">Reproduction à des fins commerciales interdite</p>
   </footer>
 
   <script src="main.js"></script>
