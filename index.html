@@ -77,7 +77,10 @@
 
     <div id="presentation" class="inline-flex bg-white text-[#5D4037] rounded-2xl px-3 py-3 mx-4 md:mx-32 md:mt-4">
       <p data-i18n="about.text">
-        I moved from electrical engineering to software when I realized I needed to actually see what I build. A game you can play, a website you can click through. That immediate feedback is what got me hooked. I'm currently studying at Epitech Paris, working toward a specific goal and building the skills to get there. Outside of code, I recently got back into digital art on my iPad. Not good yet, but it's a start.
+        I moved from electrical engineering to software when I realized I needed to actually see what I build. A game
+        you can play, a website you can click through. That immediate feedback is what got me hooked. I'm currently
+        studying at Epitech Paris, working toward a specific goal and building the skills to get there. Outside of code,
+        I recently got back into digital art on my iPad. Not good yet, but it's a start.
       </p>
     </div>
 
@@ -93,25 +96,41 @@
       <h2 class="text-[skyblue] text-[2rem] font-bold" data-i18n="projects.title">Projects</h2>
     </div>
 
-    <div id="projects-scroll" class="overflow-y-auto relative mt-[2vh] w-full md:w-auto" style="max-height: calc(81vh - 3rem); overscroll-behavior: contain; min-width: min(90vw, 600px);">
+    <div id="projects-scroll" class="overflow-y-auto relative mt-[2vh] w-full md:w-auto"
+      style="max-height: calc(81vh - 3rem); overscroll-behavior: contain; min-width: min(90vw, 600px);">
+
+      <a href="https://github.com/Seizako/bernstein" target="_blank" class="w-full flex justify-center">
+        <div
+          class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.bernstein.title">Bernstein -
+            Kubernetes Container Orchestration</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.bernstein.desc">A group project of 3. We deployed a full
+            microservices voting app on a multi-node Kubernetes cluster on GCP. I handled Traefik as reverse proxy and
+            load balancer, and the Result service. The hardest part was debugging why nothing worked : firewall rules,
+            wrong configmap names, postgres auth.</p>
+        </div>
+      </a>
 
       <a href="https://github.com/Seizako/nexus" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.nexus.title">Nexus - Real-Time Chat Application</h3>
-          <p class="text-[#5D4037]" data-i18n="projects.nexus.desc">A Discord-like real-time chat application built with Rust, developed collaboratively by a team of 4.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.nexus.title">Nexus - Real-Time Chat
+            Application</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.nexus.desc">A Discord-like real-time chat application built with
+            Rust, developed collaboratively by a team of 4.
             Features include user authentication, server and channel management, real-time messaging via WebSockets,
             and message history. Built with a focus on performance, memory safety, and clean architecture
             using Rust's ownership model and async programming patterns.</p>
         </div>
       </a>
 
-      <a href="https://github.com/Seizako/epitale" target="_blank"
-        class="w-full flex justify-center">
+      <a href="https://github.com/Seizako/epitale" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.epitale.title">EPITALE - RPG Adventure Game</h3>
-          <p class="text-[#5D4037]" data-i18n="projects.epitale.desc">A 2D top-down RPG adventure game built in Java using LibGDX framework.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.epitale.title">EPITALE - RPG Adventure
+            Game</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.epitale.desc">A 2D top-down RPG adventure game built in Java
+            using LibGDX framework.
             Developed collaboratively by a team of 3 following OOP principles. Features include
             turn-based combat with bullet hell elements, exploration system, NPC dialogues, and
             morality mechanics. Includes comprehensive UML diagrams, JaCoCo test coverage,
@@ -122,8 +141,10 @@
       <a href="https://github.com/Seizako/hungerjob" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.jobboard.title">HungerJob - Job Board Platform</h3>
-          <p class="text-[#5D4037]" data-i18n="projects.jobboard.desc">A full-stack job advertisement platform developed collaboratively by a team
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.jobboard.title">HungerJob - Job Board
+            Platform</h3>
+          <p class="text-[#5D4037]" data-i18n="projects.jobboard.desc">A full-stack job advertisement platform developed
+            collaboratively by a team
             of 3 developers. Features include user authentication, job posting management,
             and an admin dashboard with CRUD operations. Built with HTML/CSS, JavaScript,
             Tailwind CSS for the frontend, and Node.js with Express.js and MySQL for the
@@ -134,8 +155,10 @@
       <a href="https://github.com/Seizako/digitalresume" target="_blank" class="w-full flex justify-center">
         <div
           class="flex flex-col text-center bg-white rounded-2xl px-2 py-2 md:px-2 md:py-2 mt-[3vh] md:mt-[5vh] mx-4 md:mx-[5vh] cursor-pointer hover:scale-[1.025]">
-          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.digitalresume.title">Digital Resume</h3>
-          <p class="text-[#5D4037]" data-i18n="projects.digitalresume.desc">A responsive personal resume website built from scratch using HTML and CSS.
+          <h3 class="text-[1.25rem] text-[#CD853F] font-bold" data-i18n="projects.digitalresume.title">Digital Resume
+          </h3>
+          <p class="text-[#5D4037]" data-i18n="projects.digitalresume.desc">A responsive personal resume website built
+            from scratch using HTML and CSS.
             Completed independently within a 4-day timeframe, this project demonstrates
             core web development skills including semantic markup, CSS styling, and
             responsive design principles.</p>

@@ -4,6 +4,8 @@ Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web a été conçu
 
 Le portfolio présente une approche créative en utilisant des thèmes saisonniers (pluie, soleil, automne, neige) pour chaque section, offrant une expérience utilisateur unique et visuellement engageante.
 
+Lien du portfolio en ligne : https://seizako.github.io/portfolio/
+
 ## Technologies Utilisées
 
 * **HTML & CSS** : Structure et style de base.

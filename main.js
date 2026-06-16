@@ -60,6 +60,10 @@ const translations = {
     },
     projects: {
       title: "Projects",
+      bernstein: {
+        title: "Bernstein - Kubernetes Container Orchestration",
+        desc: "A group project of 3. We deployed a full microservices voting app on a multi-node Kubernetes cluster on GCP. I handled Traefik as reverse proxy and load balancer, and the Result service. The hardest part was debugging why nothing worked : firewall rules, wrong configmap names, postgres auth."
+      },
       nexus: {
         title: "Nexus - Real-Time Chat Application",
         desc: "Nexus is an Epitech project in Rust with a team of 4. I took on the project lead role and set up Trello to keep everyone aligned. Avoiding merge conflicts at 4 on the same codebase was the real challenge. Rust was imposed, steep learning curve but solid result."
@@ -95,6 +99,10 @@ const translations = {
     },
     projects: {
       title: "Projets",
+      bernstein: {
+        title: "Bernstein - Orchestration de Conteneurs Kubernetes",
+        desc: "Un projet de groupe à 3. On a déployé une application de vote en microservices sur un cluster Kubernetes multi-nodes sur GCP. Je me suis occupé de Traefik comme reverse proxy et load balancer, et du service Result. Le plus difficile c'était de déboguer pourquoi rien ne marchait : règles de firewall, noms de configmap incorrects, auth postgres."
+      },
       nexus: {
         title: "Nexus - Application de Chat en Temps Réel",
         desc: "Nexus est un projet Epitech en Rust à 4. J'ai pris en charge la coordination et mis en place Trello pour garder l'équipe alignée. Éviter les conflits de merge à 4 sur le même code, c'était le vrai défi. Rust était imposé, courbe d'apprentissage raide mais résultat solide."
