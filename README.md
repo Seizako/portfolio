@@ -1,35 +1,83 @@
-# Portfolio de Ludovic WENG
+# Portfolio — Ludovic Weng
 
-Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web a été conçu pour présenter mon profil, mes compétences et mes projets, dans le cadre de ma recherche d'alternance en informatique.
+Portfolio personnel, bilingue français / anglais, déployé sur GitHub Pages :
+**<https://seizako.github.io/portfolio/>**
 
-Le portfolio présente une approche créative en utilisant des thèmes saisonniers (pluie, soleil, automne, neige) pour chaque section, offrant une expérience utilisateur unique et visuellement engageante.
+## Stack
 
-Lien du portfolio en ligne : https://seizako.github.io/portfolio/
+| | |
+|---|---|
+| Framework | React 19 |
+| Langage | TypeScript |
+| Build | Vite 6 |
+| Styles | Tailwind CSS v4 (configuration en CSS, `src/styles/index.css`) |
+| Polices | Archivo Variable + IBM Plex Mono, auto-hébergées, sous-ensemble latin |
+| Icônes | SVG locaux (`src/components/icons.tsx`) |
+| Images | Générées au préalable par `sharp` (AVIF / WebP / JPEG) |
 
-## Technologies Utilisées
+Aucune librairie de composants, aucun routeur, aucune librairie d'animation.
 
-* **HTML & CSS** : Structure et style de base.
-* **JavaScript** : Pour l'interactivité (menu hamburger, effets de chute).
-* **Tailwind CSS (via CDN)** : Framework CSS pour le stylisme rapide et responsive.
+## Démarrer
 
-## Fonctionnalités Uniques
+```bash
+npm install
+npm run dev
+```
 
-Le portfolio se distingue par plusieurs fonctionnalités interactives et de conception :
+## Organisation
 
-### Design Saisonnier et Interactif
-Chaque section du site correspond à un environnement visuel différent, symbolisant les saisons :
+```
+index.html          entrée française  → /portfolio/
+en/index.html       entrée anglaise   → /portfolio/en/
+assets/             sources non publiées (photo d'origine)
+public/             fichiers servis tels quels (images générées, CV, favicon, sitemap)
+scripts/            génération des images
+src/
+  content/          données non traduisibles : liens, dépôts, technologies, dates
+  i18n/             textes français et anglais, plus le type qui les contraint
+  components/       une section de page par fichier
+  hooks/            apparition au défilement, thème clair/sombre
+  styles/           tokens de couleur, thème, unique animation
+```
 
-1.  **Home** : Thème **Pluie** (Effet de pluie animé).
-2.  **About me** : Thème **Ensoleillé** (Présence d'un soleil).
-3.  **Projects** : Thème **Automne** (Effet de feuilles animées).
-4.  **Contact** : Thème **Hiver** (Effet de neige animée).
+### Ajouter un projet
 
-Ces effets sont gérés dynamiquement en JavaScript et stylisés en CSS.
+1. Une entrée dans `src/content/projects.ts` (identifiant, dépôt, technologies, année).
+2. Le titre, le résumé et le rôle dans **`src/i18n/fr.ts` et `src/i18n/en.ts`**.
 
-### Liens de Projet
+`Dictionary` (dans `src/i18n/dictionary.ts`) impose les deux traductions : si l'une
+manque, `npm run build` échoue avant le déploiement.
 
-La section **Projects** présente mes réalisations, avec des liens vers les dépôts GitHub.
+## Direction visuelle
 
-### Formulaire de Contact
+Le langage visuel est celui de la documentation technique — la précision d'un
+plan d'ingénierie, pas l'esthétique d'un site de démonstration.
 
-La section **Contact** inclut un formulaire pour permettre aux recruteurs et autres parties intéressées de me contacter directement via "Formspree".
+- **Couleur.** Encre froide sur papier technique, et un seul accent : le
+  vert-jaune du conducteur de terre (NF C 15-100), désaturé. C'est la couleur du
+  métier d'où vient Ludovic. Pour la changer, deux variables dans
+  `src/styles/index.css` : `--earth` dans `:root` et dans `.dark`.
+- **Typographie.** Une règle stricte : **IBM Plex Mono ne sert qu'aux données
+  lisibles par une machine** — années, technologies, champs du cartouche,
+  étiquettes du schéma. Archivo porte tout le langage humain. Trois classes
+  encodent ce système : `.nameplate`, `.marker`, `.datum`.
+- **Structure.** Le titre de chaque section vit dans le rail de marge et reste
+  collé pendant la lecture, à la manière du repère de zone d'un plan.
+- **Signature.** La section Parcours est un schéma unifilaire — le dessin qu'on
+  trace en poste source. Son terminal supérieur est ouvert et en pointillés :
+  le circuit n'est pas fermé, c'est la demande d'alternance. Formation et
+  entreprise y sont réunies par période plutôt que séparées, parce qu'elles
+  l'étaient réellement.
+
+## Déploiement
+
+`.github/workflows/deploy.yml` construit le site et le publie sur GitHub Pages
+à chaque push sur `main`.
+
+> La source des Pages doit être réglée sur **GitHub Actions**
+> (*Settings → Pages → Source*), et non sur une branche.
+
+## Licence
+
+Le code est consultable librement. Le contenu, les textes et les images
+sont la propriété de Ludovic Weng — reproduction à des fins commerciales interdite.
