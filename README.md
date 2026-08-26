@@ -1,6 +1,6 @@
 # Portfolio — Ludovic Weng
 
-Portfolio personnel, bilingue français / anglais, déployé sur GitHub Pages :
+Portfolio personnel, bilingue français / anglais, déployé sur Vercel :
 **<https://ludovic-weng.vercel.app/>**
 
 ## Stack
@@ -71,11 +71,9 @@ plan d'ingénierie, pas l'esthétique d'un site de démonstration.
 
 ## Déploiement
 
-`.github/workflows/deploy.yml` construit le site et le publie sur GitHub Pages
-à chaque push sur `main`.
-
-> La source des Pages doit être réglée sur **GitHub Actions**
-> (*Settings → Pages → Source*), et non sur une branche.
+Le site est hébergé sur Vercel, connecté au dépôt GitHub. Chaque push sur `main`
+déclenche automatiquement un build (`npm run build`) et un déploiement. 
+Aucune configuration supplémentaire n'est nécessaire.
 
 ## Licence
 
