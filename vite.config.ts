@@ -3,8 +3,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// Le site est servi sous /portfolio/ sur GitHub Pages
-const BASE = '/portfolio/'
+// Vercel sert le site à la racine du domaine
+const BASE = '/'
 
 export default defineConfig({
   base: BASE,

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seizako.github.io/portfolio/sitemap.xml
+Sitemap: https://ludovic-weng.vercel.app/sitemap.xml
