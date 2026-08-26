@@ -89,7 +89,7 @@ async function generateOpenGraph() {
            DevOps · Cloud &amp; infrastructure · Software
          </text>
          <text x="80" y="474" font-size="24" font-weight="500" fill="${COLORS.accent}">
-           seizako.github.io/portfolio
+           ludovic-weng.vercel.app
          </text>
        </g>
      </svg>`,

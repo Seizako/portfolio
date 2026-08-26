@@ -1,7 +1,7 @@
 # Portfolio — Ludovic Weng
 
 Portfolio personnel, bilingue français / anglais, déployé sur GitHub Pages :
-**<https://seizako.github.io/portfolio/>**
+**<https://ludovic-weng.vercel.app/>**
 
 ## Stack
 
@@ -27,8 +27,8 @@ npm run dev
 ## Organisation
 
 ```
-index.html          entrée française  → /portfolio/
-en/index.html       entrée anglaise   → /portfolio/en/
+index.html          entrée française  → /
+en/index.html       entrée anglaise   → /en/
 assets/             sources non publiées (photo d'origine)
 public/             fichiers servis tels quels (images générées, CV, favicon, sitemap)
 scripts/            génération des images
