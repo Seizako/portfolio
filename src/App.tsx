@@ -1,4 +1,5 @@
 import { Header } from './components/Header'
+import { Sidebar } from './components/Sidebar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { Projects } from './components/Projects'
@@ -6,9 +7,13 @@ import { Skills } from './components/Skills'
 import { Timeline } from './components/Timeline'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { useTheme } from './hooks/useTheme'
 import type { Dictionary } from './i18n/dictionary'
 
 export function App({ t }: { t: Dictionary }) {
+  // Thème géré ici une seule fois, passé au Header et à la Sidebar.
+  const { theme, toggle } = useTheme()
+
   return (
     <>
       <a
@@ -18,19 +23,22 @@ export function App({ t }: { t: Dictionary }) {
         {t.nav.skipToContent}
       </a>
 
-      <div className="mx-auto min-h-dvh w-full max-w-[66rem] bg-paper border-rule lg:border-x">
-        <Header t={t} />
+      <div className="min-h-dvh w-full bg-paper lg:grid lg:grid-cols-[18rem_minmax(0,1fr)]">
+        <Sidebar t={t} theme={theme} toggleTheme={toggle} />
+        <Header t={t} theme={theme} toggleTheme={toggle} />
 
-        <main id="main">
-          <Hero t={t} />
-          <About t={t} />
-          <Projects t={t} />
-          <Skills t={t} />
-          <Timeline t={t} />
-          <Contact t={t} />
-        </main>
+        <div className="min-w-0 lg:mx-auto lg:max-w-[84rem]">
+          <main id="main">
+            <Hero t={t} />
+            <About t={t} />
+            <Projects t={t} />
+            <Skills t={t} />
+            <Timeline t={t} />
+            <Contact t={t} />
+          </main>
 
-        <Footer t={t} />
+          <Footer t={t} />
+        </div>
       </div>
     </>
   )

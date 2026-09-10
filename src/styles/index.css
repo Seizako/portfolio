@@ -28,8 +28,6 @@
 
 /* Couleurs du thème sert uniquement aux liens et boutons, pas au texte.*/
 :root {
-  --desk: #e6e9ec;
-  --desk-grid: #d7dbdf;
   --paper: #f6f7f8;
   --plate: #ffffff;
   --ink: #16181c;
@@ -43,8 +41,6 @@
 }
 
 .dark {
-  --desk: #08090b;
-  --desk-grid: #101318;
   --paper: #101216;
   --plate: #171a1f;
   --ink: #f2f4f5;
@@ -58,7 +54,6 @@
 }
 
 @theme inline {
-  --color-desk: var(--desk);
   --color-paper: var(--paper);
   --color-plate: var(--plate);
   --color-ink: var(--ink);
@@ -84,7 +79,7 @@
   }
 
   body {
-    background-color: var(--desk);
+    background-color: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 1.0625rem;
@@ -105,15 +100,9 @@
   }
 }
 
-/* Quadrillage en fond, fixe pendant le scroll. Seulement en desktop
-   (>= 1024px), là où il y a des marges pour le voir. */
 @media (min-width: 1024px) {
-  body {
-    background-image:
-      linear-gradient(to right, var(--desk-grid) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--desk-grid) 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-attachment: fixed;
+  html {
+    scroll-padding-top: 2rem;
   }
 }
 

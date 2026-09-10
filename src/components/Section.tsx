@@ -18,7 +18,7 @@ export function Section({ id, title, intro, children }: SectionProps) {
     <section id={id} ref={ref} className="reveal border-t border-rule">
       <Container>
         <div className="grid gap-y-8 py-16 sm:py-20 lg:grid-cols-[8rem_minmax(0,1fr)] lg:gap-x-14 lg:py-28">
-          <div className="lg:sticky lg:top-28 lg:self-start">
+          <div className="lg:sticky lg:top-12 lg:self-start">
             <span aria-hidden className="mb-3 block h-px w-8 bg-earth" />
             <h2 className="marker text-ink">{title}</h2>
           </div>

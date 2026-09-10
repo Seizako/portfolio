@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import { Close, Menu, Moon, Sun } from './icons'
 import { Container } from './Container'
-import { useTheme } from '@/hooks/useTheme'
+import type { Theme } from '@/hooks/useTheme'
 import { asset } from '@/lib/asset'
 import { profile } from '@/content/profile'
 import { sectionOrder } from '@/content/navigation'
@@ -11,9 +11,14 @@ const control =
   'marker inline-flex h-10 min-w-10 items-center justify-center px-2.5 tracking-[0.1em] text-ink-3 ' +
   'transition-colors hover:text-ink'
 
-export function Header({ t }: { t: Dictionary }) {
+type HeaderProps = {
+  t: Dictionary
+  theme: Theme
+  toggleTheme: () => void
+}
+
+export function Header({ t, theme, toggleTheme }: HeaderProps) {
   const [open, setOpen] = useState(false)
-  const { theme, toggle } = useTheme()
   const menuId = useId()
 
   // Chaque id de sectionOrder doit avoir une clé du même nom dans t.nav
@@ -29,7 +34,7 @@ export function Header({ t }: { t: Dictionary }) {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-sm lg:hidden">
       <Container>
         <div className="flex h-20 items-center justify-between gap-2">
           <a
@@ -61,7 +66,7 @@ export function Header({ t }: { t: Dictionary }) {
 
             <button
               type="button"
-              onClick={toggle}
+              onClick={toggleTheme}
               aria-label={t.nav.switchTheme}
               className={control}
             >

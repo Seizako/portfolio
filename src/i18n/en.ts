@@ -32,7 +32,7 @@ export const en: Dictionary = {
     lookingForLabel: 'Looking for',
     lookingFor: 'A 2-year apprenticeship — 4 days at the company, 1 day at school',
     interestsLabel: 'Interested in',
-    interests: ['DevOps', 'Cloud & infrastructure', 'Artificial intelligence'],
+    interests: ['DevOps', 'Cloud & infrastructure'],
     seeProjects: 'See my projects',
     contactMe: 'Get in touch',
     downloadCv: 'Download CV',
