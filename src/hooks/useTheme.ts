@@ -12,6 +12,7 @@ const applyTheme = (theme: Theme) => {
   document.documentElement.style.colorScheme = theme
 }
 
+// À appeler une seule fois, dans App.
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() =>
     document.documentElement.classList.contains('dark') ? 'dark' : 'light',

@@ -26,14 +26,17 @@ export function Hero({ t }: { t: Dictionary }) {
             <Photo alt={t.meta.photoAlt} sizes="(min-width: 1024px) 208px, (min-width: 640px) 160px, 112px" />
 
             <div className="sm:flex-1">
-              <p className="marker flex items-center gap-2.5 text-ink-3">
+              <p className="marker flex items-center gap-2.5 text-ink-3 lg:hidden">
                 <span aria-hidden className="size-1.5 bg-earth" />
                 {t.hero.availability}
               </p>
 
-              <h1 className="nameplate mt-6 text-[clamp(2.5rem,8vw,4rem)] text-ink">
-                <span className="block">{'Ludovic '}</span>
-                <span className="block">Weng</span>
+              <h1 className="nameplate mt-6 text-[clamp(2.5rem,8vw,4rem)] text-ink lg:mt-0">
+                {profile.name.split(' ').map((word) => (
+                  <span key={word} className="block">
+                    {word}
+                  </span>
+                ))}
               </h1>
 
               <p className="mt-6 max-w-[42ch] text-lg text-ink-2">{t.hero.role}</p>
