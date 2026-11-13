@@ -23,25 +23,33 @@ export const fr: Dictionary = {
 
   hero: {
     availability: "En recherche d'alternance",
-    role: 'Étudiant en Master of Science à Epitech Paris',
+    role: "Étudiant en Master of Science à Epitech Paris, venu de l'électrotechnique.",
     pitch:
       "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. Je construis des projets pour apprendre en faisant, et je cherche une entreprise où continuer sur ce rythme.",
     lookingForLabel: 'Je recherche',
-    lookingFor: "Une alternance de 2 ans — 4 jours en entreprise, 1 jour à l'école",
-    interestsLabel: 'Ce qui m’intéresse',
+    lookingFor: 'Une alternance de 2 ans',
+    rhythmLabel: 'Rythme',
+    rhythm: "4 jours en entreprise, 1 jour à l'école",
+    interestsLabel: 'Domaines',
     interests: ['DevOps', 'Cloud & infrastructure'],
-    seeProjects: 'Voir mes projets',
+    seeProjects: 'Voir les projets',
     contactMe: 'Me contacter',
     downloadCv: 'Télécharger le CV',
   },
 
   about: {
     title: 'À propos',
+    quote: {
+      before: '« Un poste source et un cluster posent au fond la même question : comment faire pour que ça ',
+      highlight: 'tienne debout',
+      after: ', et comment réagir quand ça tombe. »',
+    },
     paragraphs: [
       "C'est pendant mon année d'ingénieur à l'INSA Strasbourg que j'ai découvert la programmation. Ce qui m'a accroché, c'est de voir tourner ce que je construis, un jeu qu'on peut lancer, un site qu'on peut parcourir, un résultat qui existe et qu'on peut essayer tout de suite. J'ai décidé d'en faire mon métier et je suis entré à Epitech l'année suivante.",
-      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, chez Enedis sur les postes source puis à la Compagnie des Transports Strasbourgeois. J'y ai pris l'habitude du travail en entreprise et des environnements où la rigueur n'est pas négociable. C'est aussi de là que vient mon intérêt pour l'infrastructure et le DevOps, parce qu'un poste source et un cluster posent au fond la même question, comment faire pour que ça tienne debout et comment réagir quand ça tombe.",
-      "En dehors du code, je lis beaucoup, je joue au billard et au volley, et je fais de la musculation au poids du corps.",
+      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, chez Enedis sur les postes source puis à la Compagnie des Transports Strasbourgeois. J'y ai pris l'habitude du travail en entreprise et des environnements où la rigueur n'est pas négociable. C'est de là que vient mon intérêt pour l'infrastructure et le DevOps.",
     ],
+    hobbiesLabel: 'Hors code',
+    hobbies: 'Lecture, billard, volley, musculation au poids du corps.',
   },
 
   projects: {
@@ -51,6 +59,22 @@ export const fr: Dictionary = {
     viewSource: 'Voir le code',
     roleLabel: 'Mon rôle',
     otherProjects: 'Autres projets',
+    diagram: {
+      caption: 'Schéma — architecture déployée',
+      mine: 'Ma partie',
+      bernsteinAlt:
+        "Schéma de l'architecture de Bernstein : le trafic Internet passe par Traefik, qui répartit vers les services Vote et Result. Vote écrit dans Redis, un worker transfère vers PostgreSQL, que Result lit. Traefik et Result sont ma partie.",
+      nexusAlt:
+        "Schéma de l'architecture de Nexus : le client Next.js échange en WebSockets avec le serveur Rust, qui conserve l'historique des messages dans PostgreSQL. Le tout tourne dans Docker.",
+      cluster: 'Cluster GKE · multi-nœuds',
+      webService: 'service web',
+      queue: "file d'attente",
+      storage: 'stockage',
+      client: 'navigateur',
+      server: 'Serveur Rust',
+      serverDetail: 'auth · salons · messages',
+      history: 'historique',
+    },
     entries: {
       bernstein: {
         title: 'Bernstein — Orchestration de conteneurs Kubernetes',
@@ -154,16 +178,16 @@ export const fr: Dictionary = {
 
   contact: {
     title: 'Contact',
+    headline: ['Parlons de', 'votre alternance.'],
     lead: "Je cherche une alternance de deux ans en informatique, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
-    emailLabel: 'Email',
+    copy: "Copier l'adresse",
+    copied: 'Adresse copiée',
     linkedinLabel: 'LinkedIn',
     githubLabel: 'GitHub',
     cvLabel: 'Télécharger le CV (PDF)',
   },
 
   footer: {
-    identityLabel: 'Identité',
-    locationLabel: 'Lieu',
     rights: 'Reproduction à des fins commerciales interdite.',
     sourceCode: 'Code source',
   },

@@ -6,8 +6,10 @@
   font-family: 'Archivo Variable';
   font-style: normal;
   font-weight: 100 900;
+  /* Axe de largeur : le nom du hero est composé en Archivo élargie (125 %) */
+  font-stretch: 62% 125%;
   font-display: swap;
-  src: url('@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2')
+  src: url('@fontsource-variable/archivo/files/archivo-latin-standard-normal.woff2')
     format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
@@ -27,29 +29,29 @@
 }
 
 :root {
-  --paper: #f6f7f8;
-  --plate: #ffffff;
-  --ink: #16181c;
-  --ink-2: #4b525b;
-  --ink-3: #666e79;
-  --rule: #dce0e4;
-  --rule-strong: #bfc5cc;
-  --earth: #67740f;
-  --earth-hover: #4f590b;
-  --earth-ink: #ffffff;
+  --paper: #f3f1ec;
+  --plate: #fbfaf7;
+  --ink: #141518;
+  --ink-2: #43474d;
+  --ink-3: #5d6269;
+  --rule: #dedbd3;
+  --rule-strong: #c4c0b6;
+  --earth: #5b6612;
+  --earth-hover: #46500c;
+  --earth-ink: #fbfaf7;
 }
 
 .dark {
-  --paper: #101216;
-  --plate: #171a1f;
-  --ink: #f2f4f5;
-  --ink-2: #b8c0ca;
-  --ink-3: #858e99;
-  --rule: #262a30;
-  --rule-strong: #3a4048;
-  --earth: #c4d82e;
-  --earth-hover: #d8e95c;
-  --earth-ink: #101216;
+  --paper: #0e0f11;
+  --plate: #16181b;
+  --ink: #efeee9;
+  --ink-2: #b9bbb6;
+  --ink-3: #8d9096;
+  --rule: #25272b;
+  --rule-strong: #3b3e43;
+  --earth: #b8c55c;
+  --earth-hover: #cad67a;
+  --earth-ink: #0e0f11;
 }
 
 @theme inline {
@@ -106,33 +108,70 @@
 }
 
 @layer components {
-  /* Style du nom en haut de page : capitales larges */
-  .nameplate {
+  /* Nom et grands titres : capitales en Archivo élargie */
+  .display {
+    font-stretch: 125%;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.035em;
-    line-height: 0.88;
+    letter-spacing: -0.012em;
+    line-height: 0.86;
   }
 
   /* Petites étiquettes (titres de section, labels) */
   .marker {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.71875rem;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     line-height: 1.4;
   }
 
   /* Chiffres et technos, alignés en colonnes */
   .datum {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.78125rem;
     letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
   }
 }
 
 @layer utilities {
+  /* Soulignement qui se retire vers la droite au survol */
+  .ulink {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    transition: background-size 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  :where(a, button):hover .ulink,
+  .ulink:hover {
+    background-size: 0 1px;
+    background-position: 100% 100%;
+  }
+
+  /* Le point « en recherche » respire lentement */
+  .pulse {
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  /* Portrait en noir et blanc, la couleur revient au survol */
+  .portrait {
+    filter: grayscale(1) contrast(1.04);
+    transition: filter 600ms ease;
+  }
+
+  .portrait:hover {
+    filter: none;
+  }
+
+  /* Lignes du nom qui montent au chargement, dans un masque */
+  .rise {
+    animation: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(6px);
@@ -143,6 +182,25 @@
 
   .reveal[data-revealed='true'] {
     opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
     transform: none;
   }
 }
@@ -161,6 +219,10 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .portrait {
+    transition: none;
   }
 
   .reveal,

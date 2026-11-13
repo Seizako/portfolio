@@ -1,5 +1,5 @@
 import { Section } from './Section'
-import { ProjectCard } from './ProjectCard'
+import { FeaturedProject, ProjectRow } from './ProjectCard'
 import { projects } from '@/content/projects'
 import type { Dictionary } from '@/i18n/dictionary'
 
@@ -9,19 +9,19 @@ export function Projects({ t }: { t: Dictionary }) {
 
   return (
     <Section id="projects" title={t.projects.title} intro={t.projects.intro}>
-      <div className="space-y-4">
-        {featured.map((project) => (
-          <ProjectCard key={project.id} project={project} t={t} variant="plate" />
-        ))}
-      </div>
-
-      <h3 className="mt-14 mb-2 marker text-ink-3">{t.projects.otherProjects}</h3>
-
       <div>
-        {others.map((project) => (
-          <ProjectCard key={project.id} project={project} t={t} variant="row" />
+        {featured.map((project, index) => (
+          <FeaturedProject key={project.id} project={project} index={index} t={t} />
         ))}
       </div>
+
+      <h3 className="marker mt-16 mb-4 text-ink-3 sm:mt-20">{t.projects.otherProjects}</h3>
+
+      <ul className="border-b border-rule">
+        {others.map((project) => (
+          <ProjectRow key={project.id} project={project} t={t} />
+        ))}
+      </ul>
     </Section>
   )
 }

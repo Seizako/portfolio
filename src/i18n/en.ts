@@ -23,25 +23,33 @@ export const en: Dictionary = {
 
   hero: {
     availability: 'Looking for an apprenticeship',
-    role: 'Master of Science student at Epitech Paris',
+    role: 'Master of Science student at Epitech Paris, coming from electrotechnics.',
     pitch:
       'I am training as a software developer, with three years of apprenticeship in electrotechnics behind me. I build projects to learn by doing, and I am looking for a company where I can keep going at that pace.',
     lookingForLabel: 'Looking for',
-    lookingFor: 'A 2-year apprenticeship — 4 days at the company, 1 day at school',
-    interestsLabel: 'Interested in',
+    lookingFor: 'A 2-year apprenticeship',
+    rhythmLabel: 'Rhythm',
+    rhythm: '4 days at the company, 1 day at school',
+    interestsLabel: 'Fields',
     interests: ['DevOps', 'Cloud & infrastructure'],
-    seeProjects: 'See my projects',
+    seeProjects: 'See the projects',
     contactMe: 'Get in touch',
     downloadCv: 'Download CV',
   },
 
   about: {
     title: 'About',
+    quote: {
+      before: '“A substation and a cluster ask the same question underneath: how do you ',
+      highlight: 'keep it standing',
+      after: ', and what do you do when it goes down.”',
+    },
     paragraphs: [
       'I discovered programming during my engineering year at INSA Strasbourg. What got me hooked was seeing what I build actually run, a game you can launch, a website you can click through, a result that exists and can be tried right away. I decided to make it my job and joined Epitech the following year.',
-      'Before that, I spent three years as an apprentice in electrotechnics, at Enedis on high-voltage substations and then at the Compagnie des Transports Strasbourgeois. That is where I got used to working inside a company, and to environments where being rigorous is not optional. It is also where my interest in infrastructure and DevOps comes from, because a substation and a cluster ask the same question underneath, how do you keep it standing and what do you do when it goes down.',
-      'Outside of code, I read a lot, I play pool and volleyball, and I train with bodyweight exercises.',
+      'Before that, I spent three years as an apprentice in electrotechnics, at Enedis on high-voltage substations and then at the Compagnie des Transports Strasbourgeois. That is where I got used to working inside a company, and to environments where being rigorous is not optional. It is also where my interest in infrastructure and DevOps comes from.',
     ],
+    hobbiesLabel: 'Outside of code',
+    hobbies: 'Reading, pool, volleyball, bodyweight training.',
   },
 
   projects: {
@@ -51,6 +59,22 @@ export const en: Dictionary = {
     viewSource: 'View source',
     roleLabel: 'My role',
     otherProjects: 'Other projects',
+    diagram: {
+      caption: 'Diagram — deployed architecture',
+      mine: 'My part',
+      bernsteinAlt:
+        'Bernstein architecture diagram: Internet traffic goes through Traefik, which routes to the Vote and Result services. Vote writes to Redis, a worker moves the data to PostgreSQL, which Result reads. Traefik and Result are my part.',
+      nexusAlt:
+        'Nexus architecture diagram: the Next.js client talks over WebSockets to the Rust server, which keeps the message history in PostgreSQL. Everything runs in Docker.',
+      cluster: 'GKE cluster · multi-node',
+      webService: 'web service',
+      queue: 'queue',
+      storage: 'storage',
+      client: 'browser',
+      server: 'Rust server',
+      serverDetail: 'auth · channels · messages',
+      history: 'history',
+    },
     entries: {
       bernstein: {
         title: 'Bernstein — Kubernetes container orchestration',
@@ -153,16 +177,16 @@ export const en: Dictionary = {
 
   contact: {
     title: 'Contact',
+    headline: ['Let’s talk about', 'your apprenticeship.'],
     lead: 'I am looking for a two-year apprenticeship in software, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
-    emailLabel: 'Email',
+    copy: 'Copy address',
+    copied: 'Address copied',
     linkedinLabel: 'LinkedIn',
     githubLabel: 'GitHub',
     cvLabel: 'Download CV (PDF)',
   },
 
   footer: {
-    identityLabel: 'Identity',
-    locationLabel: 'Location',
     rights: 'Reproduction for commercial purposes is prohibited.',
     sourceCode: 'Source code',
   },

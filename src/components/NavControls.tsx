@@ -2,6 +2,7 @@ import { Moon, Sun } from './icons'
 import type { Theme } from '@/hooks/useTheme'
 import { asset } from '@/lib/asset'
 import { sectionOrder } from '@/content/navigation'
+import type { SectionId } from '@/content/navigation'
 import type { Dictionary } from '@/i18n/dictionary'
 
 export const controlClass =
@@ -14,8 +15,17 @@ export type NavProps = {
   toggleTheme: () => void
 }
 
+// Numéro affiché devant chaque section : 01, 02…
+export const sectionNumber = (id: SectionId) =>
+  String(sectionOrder.indexOf(id) + 1).padStart(2, '0')
+
 export const navSections = (t: Dictionary) =>
-  sectionOrder.map((id) => ({ id, href: `#${id}`, label: t.nav[id] }))
+  sectionOrder.map((id) => ({
+    id,
+    href: `#${id}`,
+    label: t.nav[id],
+    number: sectionNumber(id),
+  }))
 
 export function LanguageSwitch({ t }: { t: Dictionary }) {
   const target = t.locale === 'fr' ? 'en' : 'fr'
