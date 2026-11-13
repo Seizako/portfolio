@@ -14,6 +14,7 @@ const source = resolve(root, 'assets/photo-source.jpg')
 const outputDir = resolve(root, 'public')
 const imagesDir = resolve(outputDir, 'images')
 
+// Garder en phase avec src/lib/photo.ts
 const PHOTO_WIDTHS = [320, 480, 640]
 const SANS = "Archivo, 'Ubuntu Sans', 'DejaVu Sans', sans-serif"
 
@@ -120,7 +121,7 @@ async function generateIcons() {
   const favicon = monogram(COLORS.ink, COLORS.foreground)
   await writeFile(resolve(outputDir, 'favicon.svg'), `${favicon}\n`, 'utf8')
 
-  const { size } = await sharp(Buffer.from(monogram(COLORS.ink, COLORS.foreground)))
+  const { size } = await sharp(Buffer.from(favicon))
     .resize(180, 180)
     .png({ compressionLevel: 9 })
     .toFile(resolve(outputDir, 'apple-touch-icon.png'))

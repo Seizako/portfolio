@@ -1,4 +1,3 @@
-// Compétences par catégorie
 export type SkillGroupId =
   | 'languages'
   | 'web'

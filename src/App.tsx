@@ -11,7 +11,6 @@ import { useTheme } from './hooks/useTheme'
 import type { Dictionary } from './i18n/dictionary'
 
 export function App({ t }: { t: Dictionary }) {
-  // Thème géré ici une seule fois, passé au Header et à la Sidebar.
   const { theme, toggle } = useTheme()
 
   return (

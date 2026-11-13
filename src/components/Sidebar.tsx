@@ -1,30 +1,15 @@
-import { Moon, Sun } from './icons'
-import type { Theme } from '@/hooks/useTheme'
-import { asset } from '@/lib/asset'
+import { LanguageSwitch, ThemeToggle, navSections } from './NavControls'
+import type { NavProps } from './NavControls'
 import { profile } from '@/content/profile'
-import { sectionOrder } from '@/content/navigation'
-import type { Dictionary } from '@/i18n/dictionary'
-
-const control =
-  'marker inline-flex h-10 min-w-10 items-center justify-center px-2.5 tracking-[0.1em] ' +
-  'text-ink-3 transition-colors hover:text-ink'
-
-type SidebarProps = {
-  t: Dictionary
-  theme: Theme
-  toggleTheme: () => void
-}
 
 // Navigation desktop, en colonne à gauche. En mobile, c'est le Header.
-export function Sidebar({ t, theme, toggleTheme }: SidebarProps) {
-  const sections = sectionOrder.map((id) => ({ id, href: `#${id}`, label: t.nav[id] }))
-
+export function Sidebar({ t, theme, toggleTheme }: NavProps) {
   return (
     <aside className="hidden lg:sticky lg:top-0 lg:flex lg:h-dvh lg:flex-col lg:overflow-y-auto lg:border-r lg:border-rule lg:py-12 lg:pr-10 lg:pl-12 xl:pl-16">
       <a href="#top" className="nameplate block text-base text-ink transition-colors hover:text-earth">
         {profile.name.split(' ').map((word) => (
           <span key={word} className="block">
-            {word}
+            {word}{' '}
           </span>
         ))}
       </a>
@@ -37,7 +22,7 @@ export function Sidebar({ t, theme, toggleTheme }: SidebarProps) {
       </p>
 
       <nav aria-label={t.nav.primary} className="mt-12 flex flex-col">
-        {sections.map((section) => (
+        {navSections(t).map((section) => (
           <a
             key={section.id}
             href={section.href}
@@ -49,25 +34,9 @@ export function Sidebar({ t, theme, toggleTheme }: SidebarProps) {
       </nav>
 
       <div className="mt-auto flex items-center gap-0.5 pt-10">
-        <a
-          href={t.locale === 'fr' ? asset('en/') : asset('')}
-          hrefLang={t.locale === 'fr' ? 'en' : 'fr'}
-          aria-label={t.nav.switchLanguage}
-          className={control}
-        >
-          {t.locale === 'fr' ? 'EN' : 'FR'}
-        </a>
-
+        <LanguageSwitch t={t} />
         <span aria-hidden className="mx-1 h-4 w-px bg-rule" />
-
-        <button
-          type="button"
-          onClick={toggleTheme}
-          aria-label={t.nav.switchTheme}
-          className={control}
-        >
-          {theme === 'dark' ? <Sun className="size-[17px]" /> : <Moon className="size-[17px]" />}
-        </button>
+        <ThemeToggle t={t} theme={theme} toggleTheme={toggleTheme} />
       </div>
     </aside>
   )

@@ -4,9 +4,6 @@ export const en: Dictionary = {
   locale: 'en',
 
   meta: {
-    title: 'Ludovic Weng — Epitech student looking for an apprenticeship',
-    description:
-      'Master of Science student at Epitech Paris, looking for a 2-year apprenticeship in software. DevOps, cloud and infrastructure, software development.',
     photoAlt: 'Portrait of Ludovic Weng',
   },
 
@@ -108,7 +105,6 @@ export const en: Dictionary = {
     title: 'Background',
     openTitle: 'Apprenticeship sought',
     openDetail: '2 years — 4 days at the company, 1 day at school.',
-    schoolLabel: 'Education',
     companyLabel: 'At the company',
     milestones: {
       epitech: {

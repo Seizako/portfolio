@@ -5,7 +5,6 @@ import type { Dictionary } from '@/i18n/dictionary'
 
 type Variant = 'plate' | 'row'
 
-// Une table de styles par variante (comme ButtonLink)
 const styles: Record<
   Variant,
   { article: string; title: string; techRow: string; link: string }
@@ -37,13 +36,14 @@ export function ProjectCard({
 }) {
   const copy = t.projects.entries[project.id]
   const style = styles[variant]
+  const Heading = variant === 'plate' ? 'h3' : 'h4'
 
   return (
     <article className={style.article}>
       <div className="flex items-baseline justify-between gap-4">
-        <h3 className={`font-semibold tracking-tight text-ink ${style.title}`}>
+        <Heading className={`font-semibold tracking-tight text-ink ${style.title}`}>
           {copy.title}
-        </h3>
+        </Heading>
         <span className="datum shrink-0 text-ink-3">{project.year}</span>
       </div>
 

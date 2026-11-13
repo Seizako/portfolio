@@ -1,4 +1,3 @@
-// Infos de contact et liens du site
 export const profile = {
   name: 'Ludovic Weng',
   email: 'ludovicweng@hotmail.com',
@@ -9,8 +8,4 @@ export const profile = {
     repository: 'https://github.com/Seizako/portfolio',
   },
   cv: 'documents/Ludovic_Weng_CV.pdf',
-  photo: {
-    // Générées par scripts/generate-assets.mjs
-    widths: [320, 480, 640],
-  },
 } as const

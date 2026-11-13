@@ -35,9 +35,11 @@ scripts/            génération des images
 src/
   content/          données non traduisibles : liens, dépôts, technologies, dates
   i18n/             textes français et anglais, plus le type qui les contraint
-  components/       une section de page par fichier
+  components/       sections de la page et composants d'interface partagés
   hooks/            apparition au défilement, thème clair/sombre
+  lib/              chemins des fichiers publics, srcset du portrait
   styles/           tokens de couleur, thème, unique animation
+  theme-init.js     thème appliqué avant le premier rendu, injecté dans le HTML par vite.config.ts
 ```
 
 ### Ajouter un projet

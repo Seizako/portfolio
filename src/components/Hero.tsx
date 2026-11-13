@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { ArrowDown, FileDown, Mail } from './icons'
 import { Container } from './Container'
 import { fieldLabelClass, fieldValueClass } from './field-classes'
@@ -7,8 +8,7 @@ import { profile } from '@/content/profile'
 import { asset } from '@/lib/asset'
 import type { Dictionary } from '@/i18n/dictionary'
 
-// Petit bloc label + valeur, réutilisé deux fois dans le hero.
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div>
       <dt className={fieldLabelClass}>{label}</dt>
@@ -23,7 +23,7 @@ export function Hero({ t }: { t: Dictionary }) {
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="flex flex-col gap-10 sm:flex-row-reverse sm:items-start sm:justify-between sm:gap-12">
-            <Photo alt={t.meta.photoAlt} sizes="(min-width: 1024px) 208px, (min-width: 640px) 160px, 112px" />
+            <Photo alt={t.meta.photoAlt} />
 
             <div className="sm:flex-1">
               <p className="marker flex items-center gap-2.5 text-ink-3 lg:hidden">
@@ -34,7 +34,7 @@ export function Hero({ t }: { t: Dictionary }) {
               <h1 className="nameplate mt-6 text-[clamp(2.5rem,8vw,4rem)] text-ink lg:mt-0">
                 {profile.name.split(' ').map((word) => (
                   <span key={word} className="block">
-                    {word}
+                    {word}{' '}
                   </span>
                 ))}
               </h1>

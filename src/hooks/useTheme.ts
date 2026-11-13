@@ -1,15 +1,24 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 
 export type Theme = 'light' | 'dark'
 
 const STORAGE_KEY = 'theme'
 
-const systemTheme = (): Theme =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+// localStorage peut lever une exception (navigation privée, cookies bloqués).
+const readStored = () => {
+  try {
+    return localStorage.getItem(STORAGE_KEY)
+  } catch {
+    return null
+  }
+}
 
-const applyTheme = (theme: Theme) => {
-  document.documentElement.classList.toggle('dark', theme === 'dark')
-  document.documentElement.style.colorScheme = theme
+const store = (theme: Theme) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, theme)
+  } catch {
+    // Le choix ne sera pas mémorisé, le thème change quand même.
+  }
 }
 
 // À appeler une seule fois, dans App.
@@ -18,27 +27,26 @@ export function useTheme() {
     document.documentElement.classList.contains('dark') ? 'dark' : 'light',
   )
 
-  // Si l'utilisateur n'a jamais choisi, on suit le thème système.
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.documentElement.style.colorScheme = theme
+  }, [theme])
+
+  // Sans choix mémorisé, on suit le thème système.
   useEffect(() => {
     const query = window.matchMedia('(prefers-color-scheme: dark)')
     const onChange = () => {
-      if (localStorage.getItem(STORAGE_KEY)) return
-      const next = systemTheme()
-      setTheme(next)
-      applyTheme(next)
+      if (!readStored()) setTheme(query.matches ? 'dark' : 'light')
     }
     query.addEventListener('change', onChange)
     return () => query.removeEventListener('change', onChange)
   }, [])
 
-  const toggle = useCallback(() => {
-    setTheme((current) => {
-      const next: Theme = current === 'dark' ? 'light' : 'dark'
-      localStorage.setItem(STORAGE_KEY, next)
-      applyTheme(next)
-      return next
-    })
-  }, [])
+  const toggle = () => {
+    const next: Theme = theme === 'dark' ? 'light' : 'dark'
+    store(next)
+    setTheme(next)
+  }
 
   return { theme, toggle }
 }
