@@ -37,7 +37,7 @@ export function Header({ t, theme, toggleTheme }: NavProps) {
         <div className="flex h-20 items-center justify-between gap-2">
           <a
             href="#top"
-            className="nameplate inline-flex h-11 items-center text-sm text-ink transition-colors hover:text-earth"
+            className="display inline-flex h-11 items-center text-sm tracking-[0.02em] text-ink transition-colors hover:text-earth"
           >
             {profile.name}
           </a>
@@ -81,9 +81,10 @@ export function Header({ t, theme, toggleTheme }: NavProps) {
                 key={section.id}
                 href={section.href}
                 onClick={() => setOpen(false)}
-                className="marker block py-3.5 text-ink-2 transition-colors hover:text-ink"
+                className="flex items-center gap-3.5 py-3.5 text-ink-2 transition-colors hover:text-ink"
               >
-                {section.label}
+                <span className="datum w-5 text-ink-3">{section.number}</span>
+                <span className="marker">{section.label}</span>
               </a>
             ))}
           </nav>

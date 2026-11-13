@@ -38,7 +38,7 @@ src/
   components/       sections de la page et composants d'interface partagés
   hooks/            apparition au défilement, thème clair/sombre
   lib/              chemins des fichiers publics, srcset du portrait
-  styles/           tokens de couleur, thème, unique animation
+  styles/           tokens de couleur, thème, animations
   theme-init.js     thème appliqué avant le premier rendu, injecté dans le HTML par vite.config.ts
 ```
 
@@ -52,19 +52,25 @@ manque, `npm run build` échoue avant le déploiement.
 
 ## Direction visuelle
 
-Le langage visuel est celui de la documentation technique — la précision d'un
-plan d'ingénierie, pas l'esthétique d'un site de démonstration.
+Le langage visuel est celui d'un plan d'architecte imprimé sur beau papier —
+la précision d'un plan d'ingénierie, présentée avec la retenue d'une édition
+soignée : de l'échelle, de l'espace, peu de cadres.
 
-- **Couleur.** Encre froide sur papier technique, et un seul accent : le
-  vert-jaune du conducteur de terre (NF C 15-100), désaturé. C'est la couleur du
-  métier d'où vient Ludovic. Pour la changer, deux variables dans
-  `src/styles/index.css` : `--earth` dans `:root` et dans `.dark`.
+- **Couleur.** Encre sur papier ivoire, et un seul accent : le vert-jaune du
+  conducteur de terre (NF C 15-100), désaturé. C'est la couleur du métier d'où
+  vient Ludovic. Il reste rare : numéros de section, lien actif, « ma partie »
+  dans les schémas. Pour le changer, deux variables dans `src/styles/index.css` :
+  `--earth` dans `:root` et dans `.dark`.
 - **Typographie.** Une règle stricte : **IBM Plex Mono ne sert qu'aux données
-  lisibles par une machine** — années, technologies, champs du cartouche,
-  étiquettes du schéma. Archivo porte tout le langage humain. Trois classes
-  encodent ce système : `.nameplate`, `.marker`, `.datum`.
-- **Structure.** Le titre de chaque section vit dans le rail de marge et reste
-  collé pendant la lecture, à la manière du repère de zone d'un plan.
+  lisibles par une machine** — années, technologies, numéros, étiquettes du
+  schéma. Archivo porte tout le langage humain ; son axe de largeur sert au nom
+  et aux grands titres, composés en Archivo élargie. Trois classes encodent ce
+  système : `.display`, `.marker`, `.datum`.
+- **Structure.** Chaque section s'ouvre sur un repère numéroté (`01 — À propos
+  ————`), comme les zones d'un plan. Le menu latéral reprend ces numéros et
+  marque la section en cours.
+- **Schémas.** Les projets mis en avant sont illustrés par leur architecture,
+  dessinée dans la même grammaire que le Parcours (`ProjectDiagram.tsx`).
 - **Signature.** La section Parcours est un schéma unifilaire — le dessin qu'on
   trace en poste source. Son terminal supérieur est ouvert et en pointillés :
   le circuit n'est pas fermé, c'est la demande d'alternance. Formation et

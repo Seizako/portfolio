@@ -90,74 +90,74 @@ function Missions({ items }: { items: readonly string[] }) {
 export function Timeline({ t }: { t: Dictionary }) {
   return (
     <Section id="background" title={t.background.title}>
-      <div className="relative pb-12 pl-10">
-        <Connector symbol="open" tone="earth" geometry="split" />
+      <div className="max-w-[48rem]">
+        <div className="relative pb-12 pl-10">
+          <Connector symbol="open" tone="earth" geometry="split" />
 
-        <div className="pt-[2.35rem]">
-          <p className="marker text-earth">{t.background.openTitle}</p>
-          <p className="mt-2 text-[0.9375rem] text-ink-2">{t.background.openDetail}</p>
+          <div className="pt-[2.35rem]">
+            <p className="marker text-earth">{t.background.openTitle}</p>
+            <p className="mt-2 text-[0.9375rem] text-ink-2">{t.background.openDetail}</p>
+          </div>
         </div>
-      </div>
 
-      <ol className="relative">
-        {milestones.map((milestone, index) => {
-          const copy = t.background.milestones[milestone.id]
-          const isLast = index === milestones.length - 1
-          const hasSchool = Boolean(milestone.school)
+        <ol className="relative">
+          {milestones.map((milestone, index) => {
+            const copy = t.background.milestones[milestone.id]
+            const isLast = index === milestones.length - 1
+            const hasSchool = Boolean(milestone.school)
 
-          return (
-            <li key={milestone.id} className="relative pb-12 pl-10 last:pb-0">
-              <Connector
-                symbol={milestone.node}
-                tone={milestone.node === 'live' ? 'earth' : 'muted'}
-                geometry="start"
-                bottomless={isLast}
-              />
+            return (
+              <li key={milestone.id} className="relative pb-14 pl-10 last:pb-0">
+                <Connector
+                  symbol={milestone.node}
+                  tone={milestone.node === 'live' ? 'earth' : 'muted'}
+                  geometry="start"
+                  bottomless={isLast}
+                />
 
-              <p className="datum text-ink-3">{milestone.period}</p>
+                <p className="datum text-ink-3">{milestone.period}</p>
 
-              {milestone.school && copy.school && (
-                <>
-                  <h3 className="mt-1.5 text-lg font-semibold tracking-tight text-ink">
-                    {copy.school.degree}
-                  </h3>
-                  <p className="mt-0.5 text-[0.9375rem] text-ink-2">
-                    {milestone.school.name} · {milestone.school.location}
-                  </p>
-                  {copy.school.degreeNote && (
-                    <p className="mt-2 max-w-[52ch] text-[0.9375rem] text-ink-2">
-                      {copy.school.degreeNote}
+                {milestone.school && copy.school && (
+                  <>
+                    <h3 className="mt-2 text-[1.375rem] leading-tight font-semibold tracking-[-0.015em] text-ink">
+                      {copy.school.degree}
+                    </h3>
+                    <p className="mt-0.5 text-[0.9375rem] text-ink-2">
+                      {milestone.school.name} · {milestone.school.location}
                     </p>
-                  )}
-                </>
-              )}
+                    {copy.school.degreeNote && (
+                      <p className="mt-2 max-w-[52ch] text-[0.9375rem] text-ink-2">
+                        {copy.school.degreeNote}
+                      </p>
+                    )}
+                  </>
+                )}
 
-              {milestone.company && copy.company && (
-                <div className={hasSchool ? 'mt-5 pl-5' : ''}>
-                  {hasSchool && (
-                    <p className="marker text-ink-3">{t.background.companyLabel}</p>
-                  )}
+                {milestone.company && copy.company && (
+                  <div className={hasSchool ? 'mt-5 pl-5' : ''}>
+                    {hasSchool && <p className="marker text-ink-3">{t.background.companyLabel}</p>}
 
-                  <h3
-                    className={
-                      hasSchool
-                        ? 'mt-2 text-[0.9375rem] font-semibold text-ink'
-                        : 'mt-1.5 text-lg font-semibold tracking-tight text-ink'
-                    }
-                  >
-                    {copy.company.role}
-                  </h3>
-                  <p className="mt-0.5 text-[0.9375rem] text-ink-2">
-                    {milestone.company.name} · {milestone.company.location}
-                  </p>
+                    <h3
+                      className={
+                        hasSchool
+                          ? 'mt-2 text-[0.9375rem] font-semibold text-ink'
+                          : 'mt-2 text-[1.375rem] leading-tight font-semibold tracking-[-0.015em] text-ink'
+                      }
+                    >
+                      {copy.company.role}
+                    </h3>
+                    <p className="mt-0.5 text-[0.9375rem] text-ink-2">
+                      {milestone.company.name} · {milestone.company.location}
+                    </p>
 
-                  <Missions items={copy.company.missions} />
-                </div>
-              )}
-            </li>
-          )
-        })}
-      </ol>
+                    <Missions items={copy.company.missions} />
+                  </div>
+                )}
+              </li>
+            )
+          })}
+        </ol>
+      </div>
     </Section>
   )
 }
