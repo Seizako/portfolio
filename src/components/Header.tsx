@@ -1,40 +1,38 @@
-import { useEffect, useId, useState } from 'react'
-import { Close, Menu, Moon, Sun } from './icons'
+import { useEffect, useId, useRef, useState } from 'react'
+import { Close, Menu } from './icons'
 import { Container } from './Container'
-import type { Theme } from '@/hooks/useTheme'
-import { asset } from '@/lib/asset'
+import { LanguageSwitch, ThemeToggle, controlClass, navSections } from './NavControls'
+import type { NavProps } from './NavControls'
 import { profile } from '@/content/profile'
-import { sectionOrder } from '@/content/navigation'
-import type { Dictionary } from '@/i18n/dictionary'
 
-const control =
-  'marker inline-flex h-10 min-w-10 items-center justify-center px-2.5 tracking-[0.1em] text-ink-3 ' +
-  'transition-colors hover:text-ink'
-
-type HeaderProps = {
-  t: Dictionary
-  theme: Theme
-  toggleTheme: () => void
-}
-
-export function Header({ t, theme, toggleTheme }: HeaderProps) {
+export function Header({ t, theme, toggleTheme }: NavProps) {
   const [open, setOpen] = useState(false)
   const menuId = useId()
-
-  // Chaque id de sectionOrder doit avoir une clé du même nom dans t.nav
-  const sections = sectionOrder.map((id) => ({ id, href: `#${id}`, label: t.nav[id] }))
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const sections = navSections(t)
+  const MenuIcon = open ? Close : Menu
 
   useEffect(() => {
     if (!open) return
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false)
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      menuButtonRef.current?.focus()
+    }
+    const onPointerDown = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setOpen(false)
     }
     document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-sm lg:hidden">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-rule bg-paper/85 backdrop-blur-sm lg:hidden">
       <Container>
         <div className="flex h-20 items-center justify-between gap-2">
           <a
@@ -47,7 +45,7 @@ export function Header({ t, theme, toggleTheme }: HeaderProps) {
           <div className="flex items-center gap-0.5">
             <nav aria-label={t.nav.primary} className="hidden md:flex md:items-center">
               {sections.map((section) => (
-                <a key={section.id} href={section.href} className={control}>
+                <a key={section.id} href={section.href} className={controlClass}>
                   {section.label}
                 </a>
               ))}
@@ -55,37 +53,19 @@ export function Header({ t, theme, toggleTheme }: HeaderProps) {
 
             <span aria-hidden className="mx-2 hidden h-4 w-px bg-rule md:block" />
 
-            <a
-              href={t.locale === 'fr' ? asset('en/') : asset('')}
-              hrefLang={t.locale === 'fr' ? 'en' : 'fr'}
-              aria-label={t.nav.switchLanguage}
-              className={control}
-            >
-              {t.locale === 'fr' ? 'EN' : 'FR'}
-            </a>
+            <LanguageSwitch t={t} />
+            <ThemeToggle t={t} theme={theme} toggleTheme={toggleTheme} />
 
             <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={t.nav.switchTheme}
-              className={control}
-            >
-              {theme === 'dark' ? (
-                <Sun className="size-[17px]" />
-              ) : (
-                <Moon className="size-[17px]" />
-              )}
-            </button>
-
-            <button
+              ref={menuButtonRef}
               type="button"
               onClick={() => setOpen((value) => !value)}
               aria-label={open ? t.nav.close : t.nav.menu}
               aria-expanded={open}
               aria-controls={menuId}
-              className={`${control} md:hidden`}
+              className={`${controlClass} md:hidden`}
             >
-              {open ? <Close className="size-[17px]" /> : <Menu className="size-[17px]" />}
+              <MenuIcon className="size-[17px]" />
             </button>
           </div>
         </div>

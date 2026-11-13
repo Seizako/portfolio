@@ -3,7 +3,6 @@ import { milestones } from '@/content/timeline'
 import type { NodeSymbol } from '@/content/timeline'
 import type { Dictionary } from '@/i18n/dictionary'
 
-// Dessine le petit symbole (carré/cercle) sur la ligne du temps.
 function Glyph({ symbol }: { symbol: NodeSymbol | 'open' }) {
   return (
     <svg

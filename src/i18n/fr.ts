@@ -4,9 +4,6 @@ export const fr: Dictionary = {
   locale: 'fr',
 
   meta: {
-    title: "Ludovic Weng — Étudiant Epitech en recherche d'alternance",
-    description:
-      "Étudiant en Master of Science à Epitech Paris, à la recherche d'une alternance de 2 ans en informatique. DevOps, cloud et infrastructure, développement logiciel.",
     photoAlt: 'Portrait de Ludovic Weng',
   },
 
@@ -109,7 +106,6 @@ export const fr: Dictionary = {
     title: 'Parcours',
     openTitle: 'Alternance recherchée',
     openDetail: "2 ans — 4 jours en entreprise, 1 jour à l'école.",
-    schoolLabel: 'Formation',
     companyLabel: 'En entreprise',
     milestones: {
       epitech: {

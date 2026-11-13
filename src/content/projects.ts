@@ -1,4 +1,3 @@
-// Infos des projets (repo, technos...)
 export type ProjectId =
   | 'bernstein'
   | 'nexus'

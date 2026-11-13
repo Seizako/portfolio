@@ -1,21 +1,15 @@
-import { profile } from '@/content/profile'
 import { asset } from '@/lib/asset'
+import { photoSizes, photoSrcSet } from '@/lib/photo'
 
-const srcSet = (extension: string) =>
-  profile.photo.widths
-    .map((width) => `${asset(`images/photo-${width}.${extension}`)} ${width}w`)
-    .join(', ')
-
-// Photo en AVIF/WebP avec repli JPEG pour les vieux navigateurs.
-export function Photo({ alt, sizes }: { alt: string; sizes: string }) {
+export function Photo({ alt }: { alt: string }) {
   return (
     <picture>
-      <source type="image/avif" srcSet={srcSet('avif')} sizes={sizes} />
-      <source type="image/webp" srcSet={srcSet('webp')} sizes={sizes} />
+      <source type="image/avif" srcSet={photoSrcSet('avif', asset)} sizes={photoSizes} />
+      <source type="image/webp" srcSet={photoSrcSet('webp', asset)} sizes={photoSizes} />
       <img
         src={asset('images/photo-480.jpg')}
-        srcSet={srcSet('jpg')}
-        sizes={sizes}
+        srcSet={photoSrcSet('jpg', asset)}
+        sizes={photoSizes}
         alt={alt}
         width={480}
         height={480}

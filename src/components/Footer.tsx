@@ -3,7 +3,6 @@ import { fieldLabelClass, fieldValueClass } from './field-classes'
 import { profile } from '@/content/profile'
 import type { Dictionary } from '@/i18n/dictionary'
 
-// Petit bloc label + valeur, pour le pied de page
 function Field({ label, value }: { label: string; value: string }) {
   return (
     <div className="border-rule px-5 py-4 not-last:border-b sm:not-last:border-r sm:not-last:border-b-0">
@@ -13,7 +12,6 @@ function Field({ label, value }: { label: string; value: string }) {
   )
 }
 
-// Pied de page avec les infos clés
 export function Footer({ t }: { t: Dictionary }) {
   return (
     <footer className="border-t border-rule">

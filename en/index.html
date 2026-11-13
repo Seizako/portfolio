@@ -29,46 +29,6 @@
 
     <meta name="theme-color" content="#f6f7f8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#101216" media="(prefers-color-scheme: dark)" />
-
-    <!-- Applique le thème avant le premier rendu pour éviter le flash de couleur. -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('theme')
-          var dark = stored
-            ? stored === 'dark'
-            : window.matchMedia('(prefers-color-scheme: dark)').matches
-          document.documentElement.classList.toggle('dark', dark)
-          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
-        } catch (error) {
-          /* localStorage indisponible : on garde le thème clair par défaut. */
-        }
-      })()
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ludovic Weng",
-        "url": "https://ludovic-weng.vercel.app/",
-        "email": "mailto:ludovicweng@hotmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Paris",
-          "addressCountry": "FR"
-        },
-        "alumniOf": [
-          { "@type": "CollegeOrUniversity", "name": "Epitech Paris" },
-          { "@type": "CollegeOrUniversity", "name": "INSA Strasbourg" },
-          { "@type": "EducationalOrganization", "name": "Lycée Raspail" }
-        ],
-        "sameAs": [
-          "https://www.linkedin.com/in/ludovic-weng/",
-          "https://github.com/Seizako"
-        ]
-      }
-    </script>
   </head>
   <body>
     <div id="root"></div>

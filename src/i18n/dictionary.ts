@@ -7,9 +7,6 @@ export type Locale = 'fr' | 'en'
 export type Dictionary = {
   locale: Locale
   meta: {
-    title: string
-    description: string
-    // Alt de la photo de profil
     photoAlt: string
   }
   nav: {
@@ -60,7 +57,6 @@ export type Dictionary = {
     title: string
     openTitle: string
     openDetail: string
-    schoolLabel: string
     companyLabel: string
     milestones: Record<
       MilestoneId,

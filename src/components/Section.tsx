@@ -10,7 +10,7 @@ type SectionProps = {
   children: ReactNode
 }
 
-// Bloc réutilisé pour chaque section. Le titre reste collé dans la marge de gauche au scroll.
+// Le titre reste collé dans la marge gauche pendant la lecture.
 export function Section({ id, title, intro, children }: SectionProps) {
   const ref = useReveal<HTMLElement>()
 
