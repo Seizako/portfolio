@@ -1,7 +1,8 @@
 export type SkillGroupId =
-  | 'languages'
-  | 'web'
+  | 'devops'
   | 'cloud'
+  | 'languages'
+  | 'frameworks'
   | 'databases'
   | 'tools'
 
@@ -10,11 +11,12 @@ export type SkillGroup = {
   items: readonly string[]
 }
 
-// Le premier groupe est mis en avant : c'est le domaine visé
+// Même liste que le CV. Le premier groupe est mis en avant.
 export const skillGroups: readonly SkillGroup[] = [
-  { id: 'cloud', items: ['Docker', 'Kubernetes', 'GKE', 'GCP', 'AWS', 'Traefik', 'GitHub Actions'] },
-  { id: 'languages', items: ['Python', 'Java', 'Rust', 'JavaScript'] },
-  { id: 'web', items: ['HTML', 'CSS', 'Tailwind CSS', 'Next.js', 'Node.js', 'Express.js'] },
-  { id: 'databases', items: ['PostgreSQL', 'MySQL', 'MongoDB'] },
-  { id: 'tools', items: ['Git', 'GitHub', 'Trello'] },
+  { id: 'devops', items: ['Docker', 'GitHub Actions', 'CI/CD', 'SonarQube', 'Traefik'] },
+  { id: 'cloud', items: ['AWS', 'Google Kubernetes Engine (GKE)', 'Kubernetes'] },
+  { id: 'languages', items: ['Python', 'Java', 'Rust'] },
+  { id: 'frameworks', items: ['Next.js', 'Node.js', 'NestJS', 'Express.js'] },
+  { id: 'databases', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+  { id: 'tools', items: ['Linux', 'Git', 'GitHub Issues', 'Trello'] },
 ]

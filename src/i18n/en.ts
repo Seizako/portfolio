@@ -26,12 +26,12 @@ export const en: Dictionary = {
     role: 'Master of Science student at Epitech Paris, coming from electrotechnics.',
     pitch:
       'I am training as a software developer, with three years of apprenticeship in electrotechnics behind me. I build projects to learn by doing, and I am looking for a company where I can keep going at that pace.',
-    lookingForLabel: 'Looking for',
-    lookingFor: 'An apprenticeship until August 2028',
+    lookingForLabel: 'Availability',
+    lookingFor: 'Starting now, until August 2028',
     rhythmLabel: 'Rhythm',
     rhythm: '4 days at the company, 1 day at school',
     interestsLabel: 'Fields',
-    interests: ['DevOps', 'Cloud & infrastructure'],
+    interests: ['IT support', 'Development', 'DevOps'],
     seeProjects: 'See the projects',
     contactMe: 'Get in touch',
     downloadCv: 'Download CV',
@@ -49,7 +49,7 @@ export const en: Dictionary = {
       'Before that, I spent three years as an apprentice in electrotechnics, at Enedis on high-voltage substations and then at the Compagnie des Transports Strasbourgeois. That is where I got used to working inside a company, and to environments where being rigorous is not optional. It is also where my interest in infrastructure and DevOps comes from.',
     ],
     hobbiesLabel: 'Outside of code',
-    hobbies: 'Reading, pool, volleyball, bodyweight training.',
+    hobbies: 'Reading, table tennis, pool.',
   },
 
   projects: {
@@ -65,7 +65,7 @@ export const en: Dictionary = {
       bernsteinAlt:
         'Bernstein architecture diagram: Internet traffic goes through Traefik, which routes to the Vote and Result services. Vote writes to Redis, a worker moves the data to PostgreSQL, which Result reads. Traefik and Result are my part.',
       nexusAlt:
-        'Nexus architecture diagram: the Next.js client talks over WebSockets to the Rust server, which keeps the message history in PostgreSQL. Everything runs in Docker.',
+        'Nexus architecture diagram: the Next.js client talks over WebSockets to the Rust server, which stores its data in PostgreSQL and MongoDB. Everything runs in Docker.',
       cluster: 'GKE cluster · multi-node',
       webService: 'web service',
       queue: 'queue',
@@ -112,11 +112,12 @@ export const en: Dictionary = {
     title: 'Skills',
     intro: 'Technologies I have actually used, in class or on the projects above.',
     groups: {
+      devops: 'DevOps & CI/CD',
+      cloud: 'Cloud & orchestration',
       languages: 'Languages',
-      web: 'Web & frameworks',
-      cloud: 'Cloud & DevOps',
+      frameworks: 'Frameworks',
       databases: 'Databases',
-      tools: 'Tools',
+      tools: 'Systems & tools',
     },
     languagesTitle: 'Spoken languages',
     languages: [
@@ -128,13 +129,19 @@ export const en: Dictionary = {
   background: {
     title: 'Background',
     openTitle: 'Apprenticeship sought',
-    openDetail: 'Until August 2028 — 4 days at the company, 1 day at school.',
+    openDetail: 'Starting now, until August 2028 — 4 days at the company, 1 day at school.',
     companyLabel: 'At the company',
     milestones: {
       epitech: {
         school: {
           degree: 'Master of Science — Computer Science',
           degreeNote: 'RNCP 38114 qualification. Project-based learning and agile methodologies.',
+        },
+      },
+      premsc: {
+        school: {
+          degree: 'Pre-MSc',
+          degreeNote: 'Preparatory year before entering the Master of Science.',
         },
       },
       insa: {
@@ -145,7 +152,6 @@ export const en: Dictionary = {
         company: {
           role: 'Electrical engineering apprentice',
           missions: [
-            'Design study for the renovation of the lighting system',
             'Wrote campaign sheets for the replacement of bus door parts',
             'Built Excel tables listing manufacturer references for the parts to be replaced',
             'Monitored the stock management of equipment in the warehouse',
@@ -153,7 +159,10 @@ export const en: Dictionary = {
         },
       },
       raspail: {
-        school: { degree: 'BTS in Electrotechnics' },
+        school: {
+          degree: 'BTS in Electrotechnics',
+          degreeNote: 'Design study for the renovation of a lighting system.',
+        },
         company: {
           role: 'Substation technician apprentice',
           missions: [
@@ -178,7 +187,7 @@ export const en: Dictionary = {
   contact: {
     title: 'Contact',
     headline: ['Let’s talk about', 'your apprenticeship.'],
-    lead: 'I am looking for an apprenticeship in software until August 2028, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
+    lead: 'I am looking for an apprenticeship in software, available now and until August 2028, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
     copy: 'Copy address',
     copied: 'Address copied',
     linkedinLabel: 'LinkedIn',
