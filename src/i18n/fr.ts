@@ -27,7 +27,7 @@ export const fr: Dictionary = {
     pitch:
       "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. Je construis des projets pour apprendre en faisant, et je cherche une entreprise où continuer sur ce rythme.",
     lookingForLabel: 'Je recherche',
-    lookingFor: 'Une alternance de 2 ans',
+    lookingFor: "Une alternance jusqu'en août 2028",
     rhythmLabel: 'Rythme',
     rhythm: "4 jours en entreprise, 1 jour à l'école",
     interestsLabel: 'Domaines',
@@ -129,7 +129,7 @@ export const fr: Dictionary = {
   background: {
     title: 'Parcours',
     openTitle: 'Alternance recherchée',
-    openDetail: "2 ans — 4 jours en entreprise, 1 jour à l'école.",
+    openDetail: "Jusqu'en août 2028 — 4 jours en entreprise, 1 jour à l'école.",
     companyLabel: 'En entreprise',
     milestones: {
       epitech: {
@@ -179,7 +179,7 @@ export const fr: Dictionary = {
   contact: {
     title: 'Contact',
     headline: ['Parlons de', 'votre alternance.'],
-    lead: "Je cherche une alternance de deux ans en informatique, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
+    lead: "Je cherche une alternance en informatique jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
     copy: "Copier l'adresse",
     copied: 'Adresse copiée',
     linkedinLabel: 'LinkedIn',

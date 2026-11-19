@@ -27,7 +27,7 @@ export const en: Dictionary = {
     pitch:
       'I am training as a software developer, with three years of apprenticeship in electrotechnics behind me. I build projects to learn by doing, and I am looking for a company where I can keep going at that pace.',
     lookingForLabel: 'Looking for',
-    lookingFor: 'A 2-year apprenticeship',
+    lookingFor: 'An apprenticeship until August 2028',
     rhythmLabel: 'Rhythm',
     rhythm: '4 days at the company, 1 day at school',
     interestsLabel: 'Fields',
@@ -128,7 +128,7 @@ export const en: Dictionary = {
   background: {
     title: 'Background',
     openTitle: 'Apprenticeship sought',
-    openDetail: '2 years — 4 days at the company, 1 day at school.',
+    openDetail: 'Until August 2028 — 4 days at the company, 1 day at school.',
     companyLabel: 'At the company',
     milestones: {
       epitech: {
@@ -178,7 +178,7 @@ export const en: Dictionary = {
   contact: {
     title: 'Contact',
     headline: ['Let’s talk about', 'your apprenticeship.'],
-    lead: 'I am looking for a two-year apprenticeship in software, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
+    lead: 'I am looking for an apprenticeship in software until August 2028, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
     copy: 'Copy address',
     copied: 'Address copied',
     linkedinLabel: 'LinkedIn',
