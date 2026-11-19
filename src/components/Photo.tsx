@@ -15,7 +15,7 @@ export function Photo({ alt }: { alt: string }) {
         height={480}
         decoding="async"
         fetchPriority="high"
-        className="portrait block shrink-0 size-40 object-cover sm:size-52 lg:size-58"
+        className="block shrink-0 size-40 object-cover sm:size-52 lg:size-58"
       />
     </picture>
   )
