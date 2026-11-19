@@ -3,12 +3,6 @@ import { ProjectDiagram } from './ProjectDiagram'
 import type { Project } from '@/content/projects'
 import type { Dictionary } from '@/i18n/dictionary'
 
-// « Nom — sous-titre » : le nom en gras, le sous-titre en léger
-const splitTitle = (title: string) => {
-  const [name, ...rest] = title.split(' — ')
-  return { name, subtitle: rest.join(' — ') }
-}
-
 const stackLine = (project: Project) => project.stack.join(' / ')
 
 export function FeaturedProject({
@@ -21,18 +15,19 @@ export function FeaturedProject({
   t: Dictionary
 }) {
   const copy = t.projects.entries[project.id]
-  const { name, subtitle } = splitTitle(copy.title)
+  const { title: name, subtitle } = copy
 
   return (
     <article className="grid gap-x-16 gap-y-12 border-t border-rule py-14 xl:grid-cols-2">
       <div className="min-w-0">
         <p className="datum text-ink-3">
-          <span className="text-earth">{String(index + 1).padStart(2, '0')}</span> — {project.year}
+          <span className="mr-4 text-earth">{String(index + 1).padStart(2, '0')}</span>
+          {project.year}
         </p>
 
         <h3 className="mt-4 text-[clamp(1.75rem,2.6vw,2.25rem)] leading-[1.1] font-semibold tracking-[-0.02em] text-ink">
           {name}
-          {subtitle && <span className="block font-light text-ink-2">{subtitle}</span>}
+          <span className="block font-light text-ink-2">{subtitle}</span>
         </h3>
 
         <p className="mt-6 max-w-[60ch] text-base text-ink-2">{copy.summary}</p>
@@ -60,7 +55,7 @@ export function FeaturedProject({
 
 export function ProjectRow({ project, t }: { project: Project; t: Dictionary }) {
   const copy = t.projects.entries[project.id]
-  const { name, subtitle } = splitTitle(copy.title)
+  const { title: name, subtitle } = copy
 
   return (
     <li className="border-t border-rule">
@@ -73,7 +68,7 @@ export function ProjectRow({ project, t }: { project: Project; t: Dictionary }) 
         <span className="datum w-12 shrink-0 text-ink-3">{project.year}</span>
         <span className="min-w-0 flex-[1_1_17rem] text-lg font-medium text-ink transition-colors group-hover:text-earth">
           {name}
-          {subtitle && <span className="font-light text-ink-2"> — {subtitle}</span>}
+          <span className="ml-3 font-light text-ink-2">{subtitle}</span>
         </span>
         <span className="datum min-w-0 flex-[1_1_15rem] text-ink-3">{stackLine(project)}</span>
         <span className="marker inline-flex items-center gap-1.5 text-ink transition-colors group-hover:text-earth">

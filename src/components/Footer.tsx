@@ -9,7 +9,7 @@ export function Footer({ t }: { t: Dictionary }) {
       <Container>
         <div className="flex flex-col gap-2 border-t border-rule pt-7 pb-12 text-ink-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="datum">
-            © {new Date().getFullYear()} {profile.name} — {t.footer.rights}
+            © {new Date().getFullYear()} {profile.name}. {t.footer.rights}
           </p>
           <a
             href={profile.links.repository}

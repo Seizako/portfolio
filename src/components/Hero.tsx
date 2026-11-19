@@ -65,7 +65,7 @@ export function Hero({ t }: { t: Dictionary }) {
           <dl className="mt-20 grid gap-x-12 gap-y-6 border-t border-rule pt-7 sm:grid-cols-3 lg:mt-24">
             <Field label={t.hero.lookingForLabel}>{t.hero.lookingFor}</Field>
             <Field label={t.hero.rhythmLabel}>{t.hero.rhythm}</Field>
-            <Field label={t.hero.interestsLabel}>{t.hero.interests.join(' · ')}</Field>
+            <Field label={t.hero.interestsLabel}>{t.hero.interests.join(', ')}</Field>
           </dl>
         </div>
       </Container>

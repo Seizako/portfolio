@@ -36,7 +36,7 @@ export function Skills({ t }: { t: Dictionary }) {
           <ul className="flex flex-wrap gap-x-8 gap-y-1 text-base text-ink">
             {t.skills.languages.map((language) => (
               <li key={language.name}>
-                {language.name} <span className="text-ink-3">— {language.level}</span>
+                {language.name} <span className="text-ink-3">({language.level})</span>
               </li>
             ))}
           </ul>

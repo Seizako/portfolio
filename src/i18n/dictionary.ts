@@ -50,8 +50,7 @@ export type Dictionary = {
     viewSource: string
     roleLabel: string
     otherProjects: string
-    // Le titre se lit « Nom — sous-titre » : la partie après le tiret est le sous-titre
-    entries: Record<ProjectId, { title: string; summary: string; role: string }>
+    entries: Record<ProjectId, { title: string; subtitle: string; summary: string; role: string }>
     diagram: {
       caption: string
       mine: string

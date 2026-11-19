@@ -81,13 +81,13 @@ async function generateOpenGraph() {
        <g font-family="${SANS}" fill="${COLORS.foreground}">
          <circle cx="86" cy="176" r="6" fill="${COLORS.accent}"/>
          <text x="104" y="183" font-size="24" font-weight="500" fill="${COLORS.muted}">
-           Epitech Paris — Master of Science
+           Epitech Paris, Master of Science
          </text>
          <text x="80" y="290" font-size="82" font-weight="700" letter-spacing="-2">
            Ludovic Weng
          </text>
          <text x="80" y="352" font-size="30" font-weight="400" fill="${COLORS.muted}">
-           DevOps · Cloud &amp; infrastructure · Software
+           Support IT, développement, DevOps
          </text>
          <text x="80" y="474" font-size="24" font-weight="500" fill="${COLORS.accent}">
            ludovic-weng.vercel.app
