@@ -114,7 +114,7 @@ function Bernstein({ d, marker }: { d: Dictionary['projects']['diagram']; marker
         worker
       </text>
       <Box x={170} y={24} w={140} h={40} title="Internet" />
-      <Box x={140} y={112} w={200} h={52} title="Traefik" detail="reverse proxy · LB" mine />
+      <Box x={140} y={112} w={200} h={52} title="Traefik" detail="reverse proxy, LB" mine />
       <Box x={40} y={216} w={160} h={52} title="Vote" detail={d.webService} />
       <Box x={280} y={216} w={160} h={52} title="Result" detail={d.webService} mine />
       <Box x={40} y={300} w={160} h={52} title="Redis" detail={d.queue} />
@@ -138,7 +138,7 @@ function Nexus({ d, marker }: { d: Dictionary['projects']['diagram']; marker: st
       </text>
       <Box x={140} y={40} w={200} h={56} title="Next.js" detail={d.client} />
       <Box x={140} y={176} w={200} h={56} title={d.server} detail={d.serverDetail} />
-      <Box x={140} y={300} w={200} h={56} title="PostgreSQL · MongoDB" detail={d.storage} />
+      <Box x={140} y={300} w={200} h={56} title="PostgreSQL, MongoDB" detail={d.storage} />
     </>
   )
 }

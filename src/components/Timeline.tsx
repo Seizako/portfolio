@@ -78,7 +78,7 @@ function Missions({ items }: { items: readonly string[] }) {
       {items.map((mission) => (
         <li key={mission} className="grid grid-cols-[0.9rem_1fr] text-[0.9375rem] text-ink-2">
           <span aria-hidden className="text-ink-3">
-            –
+            -
           </span>
           <span>{mission}</span>
         </li>
@@ -123,7 +123,7 @@ export function Timeline({ t }: { t: Dictionary }) {
                       {copy.school.degree}
                     </h3>
                     <p className="mt-0.5 text-[0.9375rem] text-ink-2">
-                      {milestone.school.name} · {milestone.school.location}
+                      {milestone.school.name}, {milestone.school.location}
                     </p>
                     {copy.school.degreeNote && (
                       <p className="mt-2 max-w-[52ch] text-[0.9375rem] text-ink-2">
@@ -147,7 +147,7 @@ export function Timeline({ t }: { t: Dictionary }) {
                       {copy.company.role}
                     </h3>
                     <p className="mt-0.5 text-[0.9375rem] text-ink-2">
-                      {milestone.company.name} · {milestone.company.location}
+                      {milestone.company.name}, {milestone.company.location}
                     </p>
 
                     <Missions items={copy.company.missions} />

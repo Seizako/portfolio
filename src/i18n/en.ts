@@ -17,7 +17,7 @@ export const en: Dictionary = {
     skills: 'Skills',
     background: 'Background',
     contact: 'Contact',
-    switchLanguage: 'FR — passer en français',
+    switchLanguage: 'FR - passer en français',
     switchTheme: 'Toggle theme',
   },
 
@@ -31,7 +31,7 @@ export const en: Dictionary = {
     rhythmLabel: 'Rhythm',
     rhythm: '4 days at the company, 1 day at school',
     interestsLabel: 'Fields',
-    interests: ['IT support', 'Development', 'DevOps'],
+    interests: ['IT support', 'development', 'DevOps'],
     seeProjects: 'See the projects',
     contactMe: 'Get in touch',
     downloadCv: 'Download CV',
@@ -60,50 +60,49 @@ export const en: Dictionary = {
     roleLabel: 'My role',
     otherProjects: 'Other projects',
     diagram: {
-      caption: 'Diagram — deployed architecture',
+      caption: 'Deployed architecture diagram',
       mine: 'My part',
       bernsteinAlt:
         'Bernstein architecture diagram: Internet traffic goes through Traefik, which routes to the Vote and Result services. Vote writes to Redis, a worker moves the data to PostgreSQL, which Result reads. Traefik and Result are my part.',
       nexusAlt:
         'Nexus architecture diagram: the Next.js client talks over WebSockets to the Rust server, which stores its data in PostgreSQL and MongoDB. Everything runs in Docker.',
-      cluster: 'GKE cluster · multi-node',
+      cluster: 'Multi-node GKE cluster',
       webService: 'web service',
       queue: 'queue',
       storage: 'storage',
       client: 'browser',
       server: 'Rust server',
-      serverDetail: 'auth · channels · messages',
+      serverDetail: 'auth, channels, messages',
       history: 'history',
     },
     entries: {
       bernstein: {
-        title: 'Bernstein — Kubernetes container orchestration',
+        title: 'Bernstein',
+        subtitle: 'Kubernetes container orchestration',
         summary:
           'Deployment of a microservices voting application on a multi-node Kubernetes cluster hosted on Google Cloud.',
         role: 'A group project of three. I handled Traefik as reverse proxy and load balancer, along with the Result service. The hardest part was debugging why nothing worked: firewall rules, wrong ConfigMap names, PostgreSQL authentication.',
       },
       nexus: {
-        title: 'Nexus — Real-time chat application',
+        title: 'Nexus',
+        subtitle: 'Real-time chat application',
         summary:
           'A Discord-like real-time chat: authentication, server and channel management, WebSocket messaging and message history.',
-        role: 'An Epitech project with a team of four, in Rust — the language was imposed, steep learning curve but a solid result. I took on the coordination role and set up Trello to keep everyone aligned. The real challenge was avoiding merge conflicts with four people on the same codebase.',
+        role: 'An Epitech project with a team of four, in Rust. The language was imposed: steep learning curve, but a solid result. I took on the coordination role and set up Trello to keep everyone aligned. The real challenge was avoiding merge conflicts with four people on the same codebase.',
       },
       epitale: {
-        title: 'EPITALE — 2D role-playing game',
+        title: 'EPITALE',
+        subtitle: '2D role-playing game',
         summary:
           'A top-down RPG built in Java with LibGDX: turn-based combat with bullet hell elements, exploration, NPC dialogue and morality mechanics.',
         role: 'An Epitech project with a team of three, following object-oriented principles, with UML diagrams, JaCoCo test coverage and Javadoc documentation. The game was ambitious for our level at the time, but we shipped it.',
       },
       hungerjob: {
-        title: 'HungerJob — Job board platform',
+        title: 'HungerJob',
+        subtitle: 'Job board platform',
         summary:
           'A full-stack job advertisement platform: authentication, job posting management and an admin dashboard.',
         role: 'An Epitech project with a team of three. I worked on part of the frontend and on the REST API on the backend, handling CRUD operations. A good first look at full-stack development.',
-      },
-      digitalresume: {
-        title: 'Digital Resume — Online CV',
-        summary: 'A responsive personal resume, hand-written in HTML and CSS.',
-        role: 'My first web project, built alone in four days to put into practice what I had just learned. Nothing fancy, but it is where it all started.',
       },
     },
   },
@@ -121,7 +120,7 @@ export const en: Dictionary = {
     },
     languagesTitle: 'Spoken languages',
     languages: [
-      { name: 'French', level: 'Native' },
+      { name: 'French', level: 'native' },
       { name: 'English', level: 'B2 level' },
     ],
   },
@@ -129,19 +128,20 @@ export const en: Dictionary = {
   background: {
     title: 'Background',
     openTitle: 'Apprenticeship sought',
-    openDetail: 'Starting now, until August 2028 — 4 days at the company, 1 day at school.',
+    openDetail: 'Starting now, until August 2028. 4 days at the company, 1 day at school.',
     companyLabel: 'At the company',
     milestones: {
       epitech: {
         school: {
-          degree: 'Master of Science — Computer Science',
+          degree: 'Master of Science in Computer Science',
           degreeNote: 'RNCP 38114 qualification. Project-based learning and agile methodologies.',
         },
       },
       premsc: {
         school: {
           degree: 'Pre-MSc',
-          degreeNote: 'Preparatory year before entering the Master of Science.',
+          degreeNote:
+            'Bridge year for students coming from other fields: software development fundamentals, through projects.',
         },
       },
       insa: {
@@ -174,7 +174,7 @@ export const en: Dictionary = {
       },
       avb: {
         company: {
-          role: 'Maintenance technician — internship',
+          role: 'Maintenance technician internship',
           missions: [
             'Preventive maintenance of intrusion alarm equipment',
             'On-site troubleshooting of electrical systems',
