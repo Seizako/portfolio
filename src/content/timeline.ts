@@ -1,5 +1,5 @@
 // Parcours du plus récent au plus ancien
-export type MilestoneId = 'epitech' | 'insa' | 'raspail' | 'avb'
+export type MilestoneId = 'epitech' | 'premsc' | 'insa' | 'raspail' | 'avb'
 
 // Symbole affiché sur le schéma du Parcours
 export type NodeSymbol =
@@ -18,8 +18,14 @@ export type Milestone = {
 export const milestones: readonly Milestone[] = [
   {
     id: 'epitech',
-    period: '2025 —',
+    period: '2026 — 2028',
     node: 'live',
+    school: { name: 'Epitech Paris', location: 'Paris' },
+  },
+  {
+    id: 'premsc',
+    period: '2025 — 2026',
+    node: 'terminal',
     school: { name: 'Epitech Paris', location: 'Paris' },
   },
   {

@@ -25,7 +25,7 @@ export const projects: readonly Project[] = [
   {
     id: 'nexus',
     repository: 'https://github.com/Seizako/nexus',
-    stack: ['Rust', 'Next.js', 'WebSockets', 'PostgreSQL', 'Docker', 'CI/CD'],
+    stack: ['Rust', 'Next.js', 'WebSockets', 'PostgreSQL', 'MongoDB', 'Docker', 'CI/CD'],
     featured: true,
     year: '2026',
   },

@@ -26,12 +26,12 @@ export const fr: Dictionary = {
     role: "Étudiant en Master of Science à Epitech Paris, venu de l'électrotechnique.",
     pitch:
       "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. Je construis des projets pour apprendre en faisant, et je cherche une entreprise où continuer sur ce rythme.",
-    lookingForLabel: 'Je recherche',
-    lookingFor: "Une alternance jusqu'en août 2028",
+    lookingForLabel: 'Disponibilité',
+    lookingFor: "Dès maintenant, jusqu'en août 2028",
     rhythmLabel: 'Rythme',
     rhythm: "4 jours en entreprise, 1 jour à l'école",
     interestsLabel: 'Domaines',
-    interests: ['DevOps', 'Cloud & infrastructure'],
+    interests: ['Support IT', 'Développement', 'DevOps'],
     seeProjects: 'Voir les projets',
     contactMe: 'Me contacter',
     downloadCv: 'Télécharger le CV',
@@ -49,7 +49,7 @@ export const fr: Dictionary = {
       "Avant ça, j'ai passé trois ans en alternance en électrotechnique, chez Enedis sur les postes source puis à la Compagnie des Transports Strasbourgeois. J'y ai pris l'habitude du travail en entreprise et des environnements où la rigueur n'est pas négociable. C'est de là que vient mon intérêt pour l'infrastructure et le DevOps.",
     ],
     hobbiesLabel: 'Hors code',
-    hobbies: 'Lecture, billard, volley, musculation au poids du corps.',
+    hobbies: 'Lecture, tennis de table, billard.',
   },
 
   projects: {
@@ -65,7 +65,7 @@ export const fr: Dictionary = {
       bernsteinAlt:
         "Schéma de l'architecture de Bernstein : le trafic Internet passe par Traefik, qui répartit vers les services Vote et Result. Vote écrit dans Redis, un worker transfère vers PostgreSQL, que Result lit. Traefik et Result sont ma partie.",
       nexusAlt:
-        "Schéma de l'architecture de Nexus : le client Next.js échange en WebSockets avec le serveur Rust, qui conserve l'historique des messages dans PostgreSQL. Le tout tourne dans Docker.",
+        "Schéma de l'architecture de Nexus : le client Next.js échange en WebSockets avec le serveur Rust, qui conserve les données dans PostgreSQL et MongoDB. Le tout tourne dans Docker.",
       cluster: 'Cluster GKE · multi-nœuds',
       webService: 'service web',
       queue: "file d'attente",
@@ -113,11 +113,12 @@ export const fr: Dictionary = {
     intro:
       "Les technologies que j'ai réellement utilisées, en cours ou sur les projets ci-dessus.",
     groups: {
+      devops: 'DevOps & CI/CD',
+      cloud: 'Cloud & orchestration',
       languages: 'Langages',
-      web: 'Web & frameworks',
-      cloud: 'Cloud & DevOps',
+      frameworks: 'Frameworks',
       databases: 'Bases de données',
-      tools: 'Outils',
+      tools: 'Systèmes & outils',
     },
     languagesTitle: 'Langues',
     languages: [
@@ -129,13 +130,19 @@ export const fr: Dictionary = {
   background: {
     title: 'Parcours',
     openTitle: 'Alternance recherchée',
-    openDetail: "Jusqu'en août 2028 — 4 jours en entreprise, 1 jour à l'école.",
+    openDetail: "Dès maintenant, jusqu'en août 2028 — 4 jours en entreprise, 1 jour à l'école.",
     companyLabel: 'En entreprise',
     milestones: {
       epitech: {
         school: {
           degree: 'Master of Science — Informatique',
           degreeNote: 'Titre RNCP 38114. Pédagogie par projets et méthodologies agiles.',
+        },
+      },
+      premsc: {
+        school: {
+          degree: 'Pré-MSc',
+          degreeNote: "Année préparatoire à l'entrée en Master of Science.",
         },
       },
       insa: {
@@ -146,7 +153,6 @@ export const fr: Dictionary = {
         company: {
           role: 'Apprenti ingénieur génie électrique',
           missions: [
-            "Projet de conception d'une étude de rénovation du système d'éclairage",
             'Rédaction de fiches de campagne pour le remplacement des pièces des portes de bus',
             'Élaboration de tableaux Excel répertoriant les références constructeurs des pièces à remplacer',
             'Contrôle de la gestion des stocks de matériel en magasin',
@@ -154,7 +160,10 @@ export const fr: Dictionary = {
         },
       },
       raspail: {
-        school: { degree: 'BTS Électrotechnique' },
+        school: {
+          degree: 'BTS Électrotechnique',
+          degreeNote: "Projet de conception d'une étude de rénovation du système d'éclairage.",
+        },
         company: {
           role: 'Apprenti technicien poste source',
           missions: [
@@ -179,7 +188,7 @@ export const fr: Dictionary = {
   contact: {
     title: 'Contact',
     headline: ['Parlons de', 'votre alternance.'],
-    lead: "Je cherche une alternance en informatique jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
+    lead: "Je cherche une alternance en informatique, disponible dès maintenant et jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
     copy: "Copier l'adresse",
     copied: 'Adresse copiée',
     linkedinLabel: 'LinkedIn',
