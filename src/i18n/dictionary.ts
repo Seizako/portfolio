@@ -38,8 +38,6 @@ export type Dictionary = {
   }
   about: {
     title: string
-    // Citation mise en avant, le passage `highlight` est coloré
-    quote: { before: string; highlight: string; after: string }
     paragraphs: readonly string[]
     hobbiesLabel: string
     hobbies: string
@@ -50,10 +48,10 @@ export type Dictionary = {
     viewSource: string
     roleLabel: string
     otherProjects: string
-    entries: Record<ProjectId, { title: string; subtitle: string; summary: string; role: string }>
+    // role n'est affiché que pour les projets mis en avant
+    entries: Record<ProjectId, { title: string; subtitle: string; summary: string; role?: string }>
     diagram: {
       caption: string
-      mine: string
       bernsteinAlt: string
       nexusAlt: string
       cluster: string
@@ -76,7 +74,6 @@ export type Dictionary = {
   background: {
     title: string
     openTitle: string
-    openDetail: string
     companyLabel: string
     milestones: Record<
       MilestoneId,
@@ -88,7 +85,6 @@ export type Dictionary = {
   }
   contact: {
     title: string
-    headline: readonly string[]
     lead: string
     copy: string
     copied: string

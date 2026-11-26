@@ -1,7 +1,7 @@
 import { LanguageSwitch, ThemeToggle, navSections } from './NavControls'
-import type { NavProps } from './NavControls'
+import type { NavBarProps } from './NavControls'
 import { profile } from '@/content/profile'
-import type { SectionId } from '@/content/navigation'
+import { topId } from '@/content/navigation'
 
 // Navigation desktop, en colonne à gauche. En mobile, c'est le Header.
 export function Sidebar({
@@ -9,11 +9,11 @@ export function Sidebar({
   theme,
   toggleTheme,
   active,
-}: NavProps & { active: SectionId | null }) {
+}: NavBarProps) {
   return (
     <aside className="hidden lg:sticky lg:top-0 lg:flex lg:h-dvh lg:flex-col lg:overflow-y-auto lg:border-r lg:border-rule lg:px-9 lg:py-12">
       <a
-        href="#top"
+        href={`#${topId}`}
         className="display block text-[0.9375rem] leading-[1.2] tracking-[0.02em] text-ink transition-colors hover:text-earth"
       >
         {profile.name.split(' ').map((word) => (

@@ -4,6 +4,7 @@ import { Container } from './Container'
 import { ButtonLink } from './ButtonLink'
 import { Photo } from './Photo'
 import { profile } from '@/content/profile'
+import { topId } from '@/content/navigation'
 import { asset } from '@/lib/asset'
 import type { Dictionary } from '@/i18n/dictionary'
 
@@ -18,14 +19,11 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
 
 export function Hero({ t }: { t: Dictionary }) {
   return (
-    <section id="top">
+    <section id={topId}>
       <Container>
         <div className="pt-12 pb-20 sm:pb-24 lg:pt-14 lg:pb-28">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <p className="marker flex items-center gap-3 text-ink-2">
-              <span aria-hidden className="pulse size-[7px] rounded-full bg-earth" />
-              {t.hero.availability}
-            </p>
+            <p className="marker text-ink-2">{t.hero.availability}</p>
             <p className="datum text-ink-3">{profile.location}</p>
           </div>
 

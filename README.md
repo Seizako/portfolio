@@ -66,9 +66,9 @@ soignée : de l'échelle, de l'espace, peu de cadres.
   schéma. Archivo porte tout le langage humain ; son axe de largeur sert au nom
   et aux grands titres, composés en Archivo élargie. Trois classes encodent ce
   système : `.display`, `.marker`, `.datum`.
-- **Structure.** Chaque section s'ouvre sur un repère numéroté (`01 — À propos
-  ————`), comme les zones d'un plan. Le menu latéral reprend ces numéros et
-  marque la section en cours.
+- **Structure.** Chaque section s'ouvre sur son titre suivi d'un filet, comme
+  les zones d'un plan. Seul le menu latéral numérote les sections, et il
+  marque celle en cours.
 - **Schémas.** Les projets mis en avant sont illustrés par leur architecture,
   dessinée dans la même grammaire que le Parcours (`ProjectDiagram.tsx`).
 - **Signature.** La section Parcours est un schéma unifilaire — le dessin qu'on
