@@ -28,6 +28,8 @@ export type Dictionary = {
     pitch: string
     lookingForLabel: string
     lookingFor: string
+    rhythmLabel: string
+    rhythm: string
     interestsLabel: string
     interests: readonly string[]
     seeProjects: string
@@ -37,6 +39,8 @@ export type Dictionary = {
   about: {
     title: string
     paragraphs: readonly string[]
+    hobbiesLabel: string
+    hobbies: string
   }
   projects: {
     title: string
@@ -44,7 +48,21 @@ export type Dictionary = {
     viewSource: string
     roleLabel: string
     otherProjects: string
-    entries: Record<ProjectId, { title: string; summary: string; role: string }>
+    // role n'est affiché que pour les projets mis en avant
+    entries: Record<ProjectId, { title: string; subtitle: string; summary: string; role?: string }>
+    diagram: {
+      caption: string
+      bernsteinAlt: string
+      nexusAlt: string
+      cluster: string
+      webService: string
+      queue: string
+      storage: string
+      client: string
+      server: string
+      serverDetail: string
+      history: string
+    }
   }
   skills: {
     title: string
@@ -56,7 +74,6 @@ export type Dictionary = {
   background: {
     title: string
     openTitle: string
-    openDetail: string
     companyLabel: string
     milestones: Record<
       MilestoneId,
@@ -69,14 +86,13 @@ export type Dictionary = {
   contact: {
     title: string
     lead: string
-    emailLabel: string
+    copy: string
+    copied: string
     linkedinLabel: string
     githubLabel: string
     cvLabel: string
   }
   footer: {
-    identityLabel: string
-    locationLabel: string
     rights: string
     sourceCode: string
   }

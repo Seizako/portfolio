@@ -2,10 +2,11 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { Close, Menu } from './icons'
 import { Container } from './Container'
 import { LanguageSwitch, ThemeToggle, controlClass, navSections } from './NavControls'
-import type { NavProps } from './NavControls'
+import type { NavBarProps } from './NavControls'
 import { profile } from '@/content/profile'
+import { topId } from '@/content/navigation'
 
-export function Header({ t, theme, toggleTheme }: NavProps) {
+export function Header({ t, theme, toggleTheme, active }: NavBarProps) {
   const [open, setOpen] = useState(false)
   const menuId = useId()
   const headerRef = useRef<HTMLElement>(null)
@@ -36,19 +37,33 @@ export function Header({ t, theme, toggleTheme }: NavProps) {
       <Container>
         <div className="flex h-20 items-center justify-between gap-2">
           <a
-            href="#top"
-            className="nameplate inline-flex h-11 items-center text-sm text-ink transition-colors hover:text-earth"
+            href={`#${topId}`}
+            className="display inline-flex h-11 items-center text-sm tracking-[0.02em] text-ink transition-colors hover:text-earth"
           >
             {profile.name}
           </a>
 
           <div className="flex items-center gap-0.5">
             <nav aria-label={t.nav.primary} className="hidden md:flex md:items-center">
-              {sections.map((section) => (
-                <a key={section.id} href={section.href} className={controlClass}>
-                  {section.label}
-                </a>
-              ))}
+              {sections.map((section) => {
+                const isActive = section.id === active
+
+                return (
+                  <a
+                    key={section.id}
+                    href={section.href}
+                    aria-current={isActive ? 'location' : undefined}
+                    className={`marker relative inline-flex h-10 items-center px-2.5 transition-colors ${
+                      isActive ? 'text-ink' : 'text-ink-3 hover:text-ink'
+                    }`}
+                  >
+                    {section.label}
+                    {isActive && (
+                      <span aria-hidden className="absolute inset-x-2.5 bottom-1.5 h-px bg-earth" />
+                    )}
+                  </a>
+                )
+              })}
             </nav>
 
             <span aria-hidden className="mx-2 hidden h-4 w-px bg-rule md:block" />
@@ -81,9 +96,15 @@ export function Header({ t, theme, toggleTheme }: NavProps) {
                 key={section.id}
                 href={section.href}
                 onClick={() => setOpen(false)}
-                className="marker block py-3.5 text-ink-2 transition-colors hover:text-ink"
+                aria-current={section.id === active ? 'location' : undefined}
+                className={`flex items-center gap-3.5 py-3.5 transition-colors ${
+                  section.id === active ? 'text-ink' : 'text-ink-2 hover:text-ink'
+                }`}
               >
-                {section.label}
+                <span className={`datum w-5 ${section.id === active ? 'text-earth' : 'text-ink-3'}`}>
+                  {section.number}
+                </span>
+                <span className="marker">{section.label}</span>
               </a>
             ))}
           </nav>

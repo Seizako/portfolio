@@ -3,7 +3,6 @@ export type ProjectId =
   | 'nexus'
   | 'epitale'
   | 'hungerjob'
-  | 'digitalresume'
 
 export type Project = {
   id: ProjectId
@@ -25,7 +24,7 @@ export const projects: readonly Project[] = [
   {
     id: 'nexus',
     repository: 'https://github.com/Seizako/nexus',
-    stack: ['Rust', 'Next.js', 'WebSockets', 'PostgreSQL', 'Docker', 'CI/CD'],
+    stack: ['Rust', 'Next.js', 'WebSockets', 'PostgreSQL', 'MongoDB', 'Docker', 'CI/CD'],
     featured: true,
     year: '2026',
   },
@@ -42,12 +41,5 @@ export const projects: readonly Project[] = [
     stack: ['Node.js', 'Express.js', 'MySQL', 'JavaScript', 'Tailwind CSS'],
     featured: false,
     year: '2026',
-  },
-  {
-    id: 'digitalresume',
-    repository: 'https://github.com/Seizako/digitalresume',
-    stack: ['HTML', 'CSS'],
-    featured: false,
-    year: '2025',
   },
 ] as const

@@ -10,25 +10,21 @@ type SectionProps = {
   children: ReactNode
 }
 
-// Le titre reste collé dans la marge gauche pendant la lecture.
+// En-tête de section : le titre suivi d'un filet, comme un repère de plan
 export function Section({ id, title, intro, children }: SectionProps) {
   const ref = useReveal<HTMLElement>()
 
   return (
-    <section id={id} ref={ref} className="reveal border-t border-rule">
+    <section id={id} ref={ref} className="reveal">
       <Container>
-        <div className="grid gap-y-8 py-16 sm:py-20 lg:grid-cols-[8rem_minmax(0,1fr)] lg:gap-x-14 lg:py-28">
-          <div className="lg:sticky lg:top-12 lg:self-start">
-            <span aria-hidden className="mb-3 block h-px w-8 bg-earth" />
-            <h2 className="marker text-ink">{title}</h2>
+        <div className="py-20 sm:py-24 lg:py-28">
+          <div className="mb-10 flex items-center gap-5 sm:mb-14">
+            <h2 className="text-base font-semibold tracking-[-0.005em] text-ink">{title}</h2>
+            <span aria-hidden className="h-px flex-1 bg-rule" />
           </div>
 
-          <div>
-            {intro && (
-              <p className="mb-10 max-w-[56ch] text-ink-2">{intro}</p>
-            )}
-            {children}
-          </div>
+          {intro && <p className="mb-14 max-w-[54ch] text-ink-2 sm:mb-16">{intro}</p>}
+          {children}
         </div>
       </Container>
     </section>

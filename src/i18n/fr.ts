@@ -17,7 +17,7 @@ export const fr: Dictionary = {
     skills: 'Compétences',
     background: 'Parcours',
     contact: 'Contact',
-    switchLanguage: 'EN — switch to English',
+    switchLanguage: 'EN - switch to English',
     switchTheme: 'Changer de thème',
   },
 
@@ -25,12 +25,14 @@ export const fr: Dictionary = {
     availability: "En recherche d'alternance",
     role: 'Étudiant en Master of Science à Epitech Paris',
     pitch:
-      "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. Je construis des projets pour apprendre en faisant, et je cherche une entreprise où continuer sur ce rythme.",
-    lookingForLabel: 'Je recherche',
-    lookingFor: "Une alternance de 2 ans — 4 jours en entreprise, 1 jour à l'école",
-    interestsLabel: 'Ce qui m’intéresse',
-    interests: ['DevOps', 'Cloud & infrastructure'],
-    seeProjects: 'Voir mes projets',
+      "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. J'apprends en réalisant des projets, et je cherche une entreprise où continuer de cette façon.",
+    lookingForLabel: 'Disponibilité',
+    lookingFor: "Dès maintenant, jusqu'en août 2028",
+    rhythmLabel: 'Rythme',
+    rhythm: "4 jours en entreprise, 1 jour à l'école",
+    interestsLabel: 'Domaines',
+    interests: ['Support IT', 'développement', 'DevOps'],
+    seeProjects: 'Voir les projets',
     contactMe: 'Me contacter',
     downloadCv: 'Télécharger le CV',
   },
@@ -38,48 +40,62 @@ export const fr: Dictionary = {
   about: {
     title: 'À propos',
     paragraphs: [
-      "C'est pendant mon année d'ingénieur à l'INSA Strasbourg que j'ai découvert la programmation. Ce qui m'a accroché, c'est de voir tourner ce que je construis, un jeu qu'on peut lancer, un site qu'on peut parcourir, un résultat qui existe et qu'on peut essayer tout de suite. J'ai décidé d'en faire mon métier et je suis entré à Epitech l'année suivante.",
-      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, chez Enedis sur les postes source puis à la Compagnie des Transports Strasbourgeois. J'y ai pris l'habitude du travail en entreprise et des environnements où la rigueur n'est pas négociable. C'est aussi de là que vient mon intérêt pour l'infrastructure et le DevOps, parce qu'un poste source et un cluster posent au fond la même question, comment faire pour que ça tienne debout et comment réagir quand ça tombe.",
-      "En dehors du code, je lis beaucoup, je joue au billard et au volley, et je fais de la musculation au poids du corps.",
+      "J'ai découvert la programmation pendant mon année d'ingénieur à l'INSA Strasbourg. Ce qui m'a plu, c'est de voir tourner tout de suite ce que je construis. J'ai décidé d'en faire mon métier et je suis entré à Epitech l'année suivante.",
+      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, d'abord chez Enedis sur les postes source, puis à la Compagnie des Transports Strasbourgeois. J'y ai appris à travailler en entreprise et à suivre des procédures strictes.",
+      "Sur un poste source, les installations ne doivent pas tomber en panne, et quand elles tombent, il faut intervenir vite. C'est ce qui m'attire aujourd'hui dans l'infrastructure et le DevOps.",
     ],
+    hobbiesLabel: "Centres d'intérêt",
+    hobbies: 'Lecture, tennis de table, billard.',
   },
 
   projects: {
     title: 'Projets',
     intro:
-      "Des projets menés dans le cadre de ma formation, presque tous en équipe. Le code de chacun est public.",
+      'Des projets réalisés pendant ma formation, presque tous en équipe. Tout le code est public.',
     viewSource: 'Voir le code',
     roleLabel: 'Mon rôle',
     otherProjects: 'Autres projets',
+    diagram: {
+      caption: "Schéma de l'architecture déployée",
+      bernsteinAlt:
+        "Schéma de l'architecture de Bernstein : le trafic Internet passe par Traefik, qui répartit vers les services Vote et Result. Vote écrit dans Redis, un worker transfère vers PostgreSQL, que Result lit.",
+      nexusAlt:
+        "Schéma de l'architecture de Nexus : le client Next.js échange en WebSockets avec le serveur Rust, qui conserve les données dans PostgreSQL et MongoDB. Le tout tourne dans Docker.",
+      cluster: 'Cluster GKE multi-nœuds',
+      webService: 'service web',
+      queue: "file d'attente",
+      storage: 'stockage',
+      client: 'navigateur',
+      server: 'Serveur Rust',
+      serverDetail: 'auth, salons, messages',
+      history: 'historique',
+    },
     entries: {
       bernstein: {
-        title: 'Bernstein — Orchestration de conteneurs Kubernetes',
+        title: 'Bernstein',
+        subtitle: 'Orchestration de conteneurs Kubernetes',
         summary:
           "Déploiement d'une application de vote en microservices sur un cluster Kubernetes multi-nœuds, hébergé sur Google Cloud.",
         role: "Projet de groupe à trois. Je me suis occupé de Traefik comme reverse proxy et load balancer, ainsi que du service Result. Le plus difficile a été de déboguer pourquoi rien ne fonctionnait : règles de firewall, noms de ConfigMap incorrects, authentification PostgreSQL.",
       },
       nexus: {
-        title: 'Nexus — Application de chat en temps réel',
+        title: 'Nexus',
+        subtitle: 'Application de chat en temps réel',
         summary:
           "Une messagerie temps réel de type Discord : authentification, gestion des serveurs et des salons, échanges par WebSockets et historique des messages.",
-        role: "Projet Epitech à quatre, en Rust — langage imposé, courbe d'apprentissage raide mais résultat solide. J'ai pris en charge la coordination de l'équipe et mis en place Trello pour garder tout le monde aligné. Le vrai défi a été d'éviter les conflits de merge à quatre sur la même base de code.",
+        role: "Projet Epitech à quatre, en Rust, un langage imposé par l'école. Je me suis occupé de la coordination de l'équipe et j'ai mis en place un tableau Trello pour répartir les tâches. La principale difficulté a été d'éviter les conflits de merge à quatre sur le même code.",
       },
       epitale: {
-        title: 'EPITALE — Jeu de rôle en 2D',
+        title: 'EPITALE',
+        subtitle: 'Jeu de rôle en 2D',
         summary:
-          "Un RPG en vue de dessus développé en Java avec LibGDX : combat au tour par tour teinté de bullet hell, exploration, dialogues avec les PNJ et mécaniques de moralité.",
-        role: "Projet Epitech à trois, conduit selon les principes de la programmation orientée objet, avec diagrammes UML, couverture de tests JaCoCo et documentation Javadoc. Le jeu était ambitieux pour notre niveau de l'époque, mais nous l'avons livré.",
+          "Un RPG en vue de dessus développé en Java avec LibGDX : combats au tour par tour avec des phases de bullet hell, exploration, dialogues avec les PNJ et mécaniques de moralité.",
       },
       hungerjob: {
-        title: "HungerJob — Plateforme d'offres d'emploi",
+        title: 'HungerJob',
+        subtitle: "Plateforme d'offres d'emploi",
         summary:
-          "Une plateforme d'annonces fullstack : authentification, gestion des offres et tableau de bord d'administration.",
-        role: "Projet Epitech à trois. J'ai travaillé sur une partie du frontend et sur l'API REST côté backend, en gérant les opérations CRUD. Une bonne première approche du développement fullstack.",
-      },
-      digitalresume: {
-        title: 'Digital Resume — CV en ligne',
-        summary: 'Un CV personnel responsive, écrit à la main en HTML et CSS.',
-        role: "Mon premier projet web, réalisé seul en quatre jours pour mettre en pratique ce que je venais d'apprendre. Rien de complexe, mais c'est là que tout a commencé.",
+          "Un site d'offres d'emploi fullstack : authentification, gestion des offres et tableau de bord d'administration.",
       },
     },
   },
@@ -87,31 +103,38 @@ export const fr: Dictionary = {
   skills: {
     title: 'Compétences',
     intro:
-      "Les technologies que j'ai réellement utilisées, en cours ou sur les projets ci-dessus.",
+      "Les technologies que j'ai utilisées en cours ou sur mes projets.",
     groups: {
+      devops: 'DevOps & CI/CD',
+      cloud: 'Cloud & orchestration',
       languages: 'Langages',
-      web: 'Web & frameworks',
-      cloud: 'Cloud & DevOps',
+      frameworks: 'Frameworks',
       databases: 'Bases de données',
-      tools: 'Outils',
+      tools: 'Systèmes & outils',
     },
     languagesTitle: 'Langues',
     languages: [
-      { name: 'Français', level: 'Langue maternelle' },
-      { name: 'Anglais', level: 'Niveau B2' },
+      { name: 'Français', level: 'langue maternelle' },
+      { name: 'Anglais', level: 'niveau B2' },
     ],
   },
 
   background: {
     title: 'Parcours',
     openTitle: 'Alternance recherchée',
-    openDetail: "2 ans — 4 jours en entreprise, 1 jour à l'école.",
     companyLabel: 'En entreprise',
     milestones: {
       epitech: {
         school: {
-          degree: 'Master of Science — Informatique',
+          degree: 'Master of Science en informatique',
           degreeNote: 'Titre RNCP 38114. Pédagogie par projets et méthodologies agiles.',
+        },
+      },
+      premsc: {
+        school: {
+          degree: 'Pré-MSc',
+          degreeNote:
+            "Année de mise à niveau pour les profils venus d'autres filières : les bases du développement logiciel, par projets.",
         },
       },
       insa: {
@@ -122,7 +145,6 @@ export const fr: Dictionary = {
         company: {
           role: 'Apprenti ingénieur génie électrique',
           missions: [
-            "Projet de conception d'une étude de rénovation du système d'éclairage",
             'Rédaction de fiches de campagne pour le remplacement des pièces des portes de bus',
             'Élaboration de tableaux Excel répertoriant les références constructeurs des pièces à remplacer',
             'Contrôle de la gestion des stocks de matériel en magasin',
@@ -130,7 +152,10 @@ export const fr: Dictionary = {
         },
       },
       raspail: {
-        school: { degree: 'BTS Électrotechnique' },
+        school: {
+          degree: 'BTS Électrotechnique',
+          degreeNote: "Projet de conception d'une étude de rénovation du système d'éclairage.",
+        },
         company: {
           role: 'Apprenti technicien poste source',
           missions: [
@@ -142,7 +167,7 @@ export const fr: Dictionary = {
       },
       avb: {
         company: {
-          role: 'Stage — technicien de maintenance',
+          role: 'Stage de technicien de maintenance',
           missions: [
             "Maintenance préventive des équipements d'alarme intrusion",
             'Intervention en dépannage sur les systèmes électriques',
@@ -154,16 +179,15 @@ export const fr: Dictionary = {
 
   contact: {
     title: 'Contact',
-    lead: "Je cherche une alternance de deux ans en informatique, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
-    emailLabel: 'Email',
+    lead: "Je cherche une alternance en informatique, disponible dès maintenant et jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire par e-mail.",
+    copy: "Copier l'adresse",
+    copied: 'Adresse copiée',
     linkedinLabel: 'LinkedIn',
     githubLabel: 'GitHub',
     cvLabel: 'Télécharger le CV (PDF)',
   },
 
   footer: {
-    identityLabel: 'Identité',
-    locationLabel: 'Lieu',
     rights: 'Reproduction à des fins commerciales interdite.',
     sourceCode: 'Code source',
   },
