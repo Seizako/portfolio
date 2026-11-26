@@ -2,19 +2,18 @@ import { Section } from './Section'
 import type { Dictionary } from '@/i18n/dictionary'
 
 export function About({ t }: { t: Dictionary }) {
-  const { quote } = t.about
+  const [lead, ...rest] = t.about.paragraphs
 
   return (
     <Section id="about" title={t.about.title}>
-      <blockquote className="max-w-[26ch] text-[clamp(1.75rem,3.6vw,3.1rem)] leading-[1.16] font-light tracking-[-0.018em] text-ink">
-        {quote.before}
-        <span className="text-earth">{quote.highlight}</span>
-        {quote.after}
-      </blockquote>
-
-      <div className="mt-14 grid gap-x-16 gap-y-6 text-[1.03125rem] text-ink-2 sm:mt-18 md:grid-cols-2">
-        {t.about.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+      <div className="max-w-[62ch] space-y-6">
+        <p className="text-[clamp(1.2rem,1.8vw,1.4rem)] leading-[1.5] font-light text-ink">
+          {lead}
+        </p>
+        {rest.map((paragraph) => (
+          <p key={paragraph} className="text-ink-2">
+            {paragraph}
+          </p>
         ))}
       </div>
 

@@ -23,47 +23,42 @@ export const en: Dictionary = {
 
   hero: {
     availability: 'Looking for an apprenticeship',
-    role: 'Master of Science student at Epitech Paris, coming from electrotechnics.',
+    role: 'Master of Science student at Epitech Paris',
     pitch:
-      'I am training as a software developer, with three years of apprenticeship in electrotechnics behind me. I build projects to learn by doing, and I am looking for a company where I can keep going at that pace.',
+      'I am training as a software developer, after three years as an apprentice in electrical engineering. I learn by building projects, and I am looking for a company where I can keep learning that way.',
     lookingForLabel: 'Availability',
     lookingFor: 'Starting now, until August 2028',
-    rhythmLabel: 'Rhythm',
-    rhythm: '4 days at the company, 1 day at school',
-    interestsLabel: 'Fields',
+    rhythmLabel: 'Schedule',
+    rhythm: '4 days at work, 1 day at school',
+    interestsLabel: 'Areas',
     interests: ['IT support', 'development', 'DevOps'],
-    seeProjects: 'See the projects',
+    seeProjects: 'View projects',
     contactMe: 'Get in touch',
     downloadCv: 'Download CV',
   },
 
   about: {
     title: 'About',
-    quote: {
-      before: '“A substation and a cluster ask the same question underneath: how do you ',
-      highlight: 'keep it standing',
-      after: ', and what do you do when it goes down.”',
-    },
     paragraphs: [
-      'I discovered programming during my engineering year at INSA Strasbourg. What got me hooked was seeing what I build actually run, a game you can launch, a website you can click through, a result that exists and can be tried right away. I decided to make it my job and joined Epitech the following year.',
-      'Before that, I spent three years as an apprentice in electrotechnics, at Enedis on high-voltage substations and then at the Compagnie des Transports Strasbourgeois. That is where I got used to working inside a company, and to environments where being rigorous is not optional. It is also where my interest in infrastructure and DevOps comes from.',
+      'I discovered programming during my engineering year at INSA Strasbourg. What I liked was seeing what I build run right away. I decided to make it my job and joined Epitech the following year.',
+      'Before that, I spent three years as an apprentice in electrical engineering, first at Enedis in high-voltage substations, then at the Compagnie des Transports Strasbourgeois, the Strasbourg public transport company. That is where I learned to work in a company and to follow strict procedures.',
+      'In a substation, the equipment must not fail, and when it does, you have to step in quickly. That is what draws me to infrastructure and DevOps today.',
     ],
-    hobbiesLabel: 'Outside of code',
+    hobbiesLabel: 'Interests',
     hobbies: 'Reading, table tennis, pool.',
   },
 
   projects: {
     title: 'Projects',
     intro:
-      'Projects built as part of my studies, almost all of them as a team. The source code of each one is public.',
+      'Projects built during my studies, almost all of them as a team. All the code is public.',
     viewSource: 'View source',
     roleLabel: 'My role',
     otherProjects: 'Other projects',
     diagram: {
       caption: 'Deployed architecture diagram',
-      mine: 'My part',
       bernsteinAlt:
-        'Bernstein architecture diagram: Internet traffic goes through Traefik, which routes to the Vote and Result services. Vote writes to Redis, a worker moves the data to PostgreSQL, which Result reads. Traefik and Result are my part.',
+        'Bernstein architecture diagram: Internet traffic goes through Traefik, which routes to the Vote and Result services. Vote writes to Redis, a worker moves the data to PostgreSQL, which Result reads.',
       nexusAlt:
         'Nexus architecture diagram: the Next.js client talks over WebSockets to the Rust server, which stores its data in PostgreSQL and MongoDB. Everything runs in Docker.',
       cluster: 'Multi-node GKE cluster',
@@ -81,35 +76,33 @@ export const en: Dictionary = {
         subtitle: 'Kubernetes container orchestration',
         summary:
           'Deployment of a microservices voting application on a multi-node Kubernetes cluster hosted on Google Cloud.',
-        role: 'A group project of three. I handled Traefik as reverse proxy and load balancer, along with the Result service. The hardest part was debugging why nothing worked: firewall rules, wrong ConfigMap names, PostgreSQL authentication.',
+        role: 'A team project with three people. I handled Traefik as the reverse proxy and load balancer, and the Result service. The hardest part was finding out why nothing worked: firewall rules, wrong ConfigMap names, PostgreSQL authentication.',
       },
       nexus: {
         title: 'Nexus',
         subtitle: 'Real-time chat application',
         summary:
           'A Discord-like real-time chat: authentication, server and channel management, WebSocket messaging and message history.',
-        role: 'An Epitech project with a team of four, in Rust. The language was imposed: steep learning curve, but a solid result. I took on the coordination role and set up Trello to keep everyone aligned. The real challenge was avoiding merge conflicts with four people on the same codebase.',
+        role: 'An Epitech project with four people, in Rust, a language required by the school. I coordinated the team and set up a Trello board to split the work. The main difficulty was avoiding merge conflicts with four people on the same code.',
       },
       epitale: {
         title: 'EPITALE',
         subtitle: '2D role-playing game',
         summary:
-          'A top-down RPG built in Java with LibGDX: turn-based combat with bullet hell elements, exploration, NPC dialogue and morality mechanics.',
-        role: 'An Epitech project with a team of three, following object-oriented principles, with UML diagrams, JaCoCo test coverage and Javadoc documentation. The game was ambitious for our level at the time, but we shipped it.',
+          'A top-down RPG built in Java with LibGDX: turn-based fights with bullet hell phases, exploration, NPC dialogue and morality mechanics.',
       },
       hungerjob: {
         title: 'HungerJob',
         subtitle: 'Job board platform',
         summary:
-          'A full-stack job advertisement platform: authentication, job posting management and an admin dashboard.',
-        role: 'An Epitech project with a team of three. I worked on part of the frontend and on the REST API on the backend, handling CRUD operations. A good first look at full-stack development.',
+          'A full-stack job board: authentication, job posting management and an admin dashboard.',
       },
     },
   },
 
   skills: {
     title: 'Skills',
-    intro: 'Technologies I have actually used, in class or on the projects above.',
+    intro: 'Technologies I have used in class or on my projects.',
     groups: {
       devops: 'DevOps & CI/CD',
       cloud: 'Cloud & orchestration',
@@ -127,14 +120,13 @@ export const en: Dictionary = {
 
   background: {
     title: 'Background',
-    openTitle: 'Apprenticeship sought',
-    openDetail: 'Starting now, until August 2028. 4 days at the company, 1 day at school.',
-    companyLabel: 'At the company',
+    openTitle: 'Looking for an apprenticeship',
+    companyLabel: 'Work placement',
     milestones: {
       epitech: {
         school: {
           degree: 'Master of Science in Computer Science',
-          degreeNote: 'RNCP 38114 qualification. Project-based learning and agile methodologies.',
+          degreeNote: 'French state-certified qualification (RNCP 38114). Project-based learning and agile methods.',
         },
       },
       premsc: {
@@ -147,27 +139,27 @@ export const en: Dictionary = {
       insa: {
         school: {
           degree: 'Electrical engineering',
-          degreeNote: 'Engineering degree as an apprentice.',
+          degreeNote: 'Engineering program, work-study track.',
         },
         company: {
           role: 'Electrical engineering apprentice',
           missions: [
-            'Wrote campaign sheets for the replacement of bus door parts',
-            'Built Excel tables listing manufacturer references for the parts to be replaced',
-            'Monitored the stock management of equipment in the warehouse',
+            'Wrote maintenance campaign sheets for replacing bus door parts',
+            'Built Excel sheets listing manufacturer part numbers for the parts to replace',
+            'Checked warehouse stock management',
           ],
         },
       },
       raspail: {
         school: {
-          degree: 'BTS in Electrotechnics',
-          degreeNote: 'Design study for the renovation of a lighting system.',
+          degree: 'BTS in Electrical Engineering',
+          degreeNote: 'Two-year technical degree. Final project: design study for the renovation of a lighting system.',
         },
         company: {
           role: 'Substation technician apprentice',
           missions: [
             'Preventive maintenance of high-voltage feeder protections',
-            'Commissioning of digital control cabinets',
+            'Commissioning of digital control and command cabinets',
             'Troubleshooting of low-voltage electrical equipment',
           ],
         },
@@ -186,8 +178,7 @@ export const en: Dictionary = {
 
   contact: {
     title: 'Contact',
-    headline: ['Let’s talk about', 'your apprenticeship.'],
-    lead: 'I am looking for an apprenticeship in software, available now and until August 2028, on a rhythm of 4 days at the company and 1 day at school. The simplest way is to email me directly.',
+    lead: 'I am looking for a software apprenticeship, starting now and running until August 2028, with 4 days at work and 1 day at school each week. The easiest way to reach me is by email.',
     copy: 'Copy address',
     copied: 'Address copied',
     linkedinLabel: 'LinkedIn',

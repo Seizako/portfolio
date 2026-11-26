@@ -1,11 +1,8 @@
 // Parcours du plus récent au plus ancien
 export type MilestoneId = 'epitech' | 'premsc' | 'insa' | 'raspail' | 'avb'
 
-// Symbole affiché sur le schéma du Parcours
-export type NodeSymbol =
-  | 'live' 
-  | 'junction' 
-  | 'terminal'
+// Symbole affiché sur le Parcours : carré plein pour la période en cours, cercle pour le passé
+export type NodeSymbol = 'live' | 'past'
 
 export type Milestone = {
   id: MilestoneId
@@ -25,27 +22,27 @@ export const milestones: readonly Milestone[] = [
   {
     id: 'premsc',
     period: '2025 - 2026',
-    node: 'terminal',
+    node: 'past',
     school: { name: 'Epitech Paris', location: 'Paris' },
   },
   {
     id: 'insa',
     period: '2024 - 2025',
-    node: 'junction',
+    node: 'past',
     school: { name: 'INSA Strasbourg', location: 'Strasbourg' },
     company: { name: 'Compagnie des Transports Strasbourgeois', location: 'Strasbourg' },
   },
   {
     id: 'raspail',
     period: '2022 - 2024',
-    node: 'junction',
+    node: 'past',
     school: { name: 'Lycée Raspail', location: 'Paris' },
     company: { name: 'Enedis', location: 'Paris' },
   },
   {
     id: 'avb',
     period: '2021',
-    node: 'terminal',
+    node: 'past',
     company: { name: 'AVB', location: 'Chelles' },
   },
 ]

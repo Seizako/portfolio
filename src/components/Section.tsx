@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { Container } from './Container'
-import { sectionNumber } from './NavControls'
 import { useReveal } from '@/hooks/useReveal'
 import type { SectionId } from '@/content/navigation'
 
@@ -11,7 +10,7 @@ type SectionProps = {
   children: ReactNode
 }
 
-// En-tête numéroté comme un repère de plan : 01 — Titre ————
+// En-tête de section : le titre suivi d'un filet, comme un repère de plan
 export function Section({ id, title, intro, children }: SectionProps) {
   const ref = useReveal<HTMLElement>()
 
@@ -20,8 +19,7 @@ export function Section({ id, title, intro, children }: SectionProps) {
       <Container>
         <div className="py-20 sm:py-24 lg:py-28">
           <div className="mb-10 flex items-center gap-5 sm:mb-14">
-            <span className="datum text-earth">{sectionNumber(id)}</span>
-            <h2 className="marker text-ink">{title}</h2>
+            <h2 className="text-base font-semibold tracking-[-0.005em] text-ink">{title}</h2>
             <span aria-hidden className="h-px flex-1 bg-rule" />
           </div>
 

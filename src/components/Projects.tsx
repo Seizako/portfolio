@@ -10,8 +10,8 @@ export function Projects({ t }: { t: Dictionary }) {
   return (
     <Section id="projects" title={t.projects.title} intro={t.projects.intro}>
       <div>
-        {featured.map((project, index) => (
-          <FeaturedProject key={project.id} project={project} index={index} t={t} />
+        {featured.map((project) => (
+          <FeaturedProject key={project.id} project={project} t={t} />
         ))}
       </div>
 

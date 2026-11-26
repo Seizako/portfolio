@@ -5,6 +5,8 @@ type Variant = 'primary' | 'text'
 type ButtonLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   variant?: Variant
   children: ReactNode
+  // Icône placée après le texte, hors du soulignement
+  icon?: ReactNode
 }
 
 // Un seul bouton plein par écran ; les autres actions sont des liens soulignés.
@@ -12,6 +14,7 @@ export function ButtonLink({
   variant = 'text',
   className = '',
   children,
+  icon,
   ...props
 }: ButtonLinkProps) {
   if (variant === 'primary') {
@@ -24,6 +27,7 @@ export function ButtonLink({
         {...props}
       >
         {children}
+        {icon}
       </a>
     )
   }
@@ -34,6 +38,7 @@ export function ButtonLink({
       {...props}
     >
       <span className="ulink">{children}</span>
+      {icon}
     </a>
   )
 }

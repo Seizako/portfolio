@@ -17,13 +17,7 @@ function Glyph({ symbol }: { symbol: NodeSymbol | 'open' }) {
       {symbol === 'live' && (
         <rect x="1.5" y="1.5" width="11" height="11" fill="currentColor" stroke="none" />
       )}
-      {symbol === 'junction' && (
-        <>
-          <circle cx="7" cy="7" r="4" className="fill-paper" />
-          <path d="M11 7h6" />
-        </>
-      )}
-      {symbol === 'terminal' && <circle cx="7" cy="7" r="3.2" className="fill-paper" />}
+      {symbol === 'past' && <circle cx="7" cy="7" r="4" className="fill-paper" />}
       {symbol === 'open' && (
         <circle cx="7" cy="7" r="4.4" strokeDasharray="1.8 1.8" className="fill-paper" />
       )}
@@ -31,46 +25,27 @@ function Glyph({ symbol }: { symbol: NodeSymbol | 'open' }) {
   )
 }
 
-function Connector({
-  symbol,
-  tone,
-  geometry,
-  bottomless = false,
-}: {
-  symbol: NodeSymbol | 'open'
-  tone: 'earth' | 'muted'
-  geometry: 'start' | 'split'
-  bottomless?: boolean
-}) {
-  const toneClass = tone === 'earth' ? 'text-earth' : 'text-ink-2'
-
-  if (geometry === 'split') {
-    return (
-      <>
-        <span
-          aria-hidden
-          className="absolute top-0 left-0 h-10 w-px border-l-2 border-dashed border-earth"
-        />
-        <span aria-hidden className={`absolute top-10 left-0 -translate-x-1/2 ${toneClass}`}>
-          <Glyph symbol={symbol} />
-        </span>
-        <span aria-hidden className="absolute top-[3.5rem] bottom-0 left-0 w-px bg-rule" />
-      </>
-    )
-  }
-
+// Trait vertical et symbole d'une étape ; le trait s'arrête au symbole pour la dernière.
+function Connector({ symbol, last }: { symbol: NodeSymbol; last: boolean }) {
   return (
     <>
       <span
         aria-hidden
-        className={`absolute top-0 left-0 w-px bg-rule ${bottomless ? 'h-2.5' : 'bottom-0'}`}
+        className={`absolute top-0 left-0 w-px bg-rule ${last ? 'h-2.5' : 'bottom-0'}`}
       />
-      <span aria-hidden className={`absolute top-0.5 left-0 -translate-x-1/2 ${toneClass}`}>
+      <span
+        aria-hidden
+        className={`absolute top-0.5 left-0 -translate-x-1/2 ${
+          symbol === 'live' ? 'text-earth' : 'text-ink-2'
+        }`}
+      >
         <Glyph symbol={symbol} />
       </span>
     </>
   )
 }
+
+const titleClass = 'mt-2 text-[1.375rem] leading-tight font-semibold tracking-[-0.015em] text-ink'
 
 function Missions({ items }: { items: readonly string[] }) {
   return (
@@ -92,11 +67,21 @@ export function Timeline({ t }: { t: Dictionary }) {
     <Section id="background" title={t.background.title}>
       <div className="max-w-[48rem]">
         <div className="relative pb-12 pl-10">
-          <Connector symbol="open" tone="earth" geometry="split" />
+          {/* Étape à venir : l'alternance recherchée, reliée au parcours par un pointillé */}
+          <span
+            aria-hidden
+            className="absolute top-0 left-0 h-10 w-px border-l-2 border-dashed border-earth"
+          />
+          <span aria-hidden className="absolute top-10 left-0 -translate-x-1/2 text-earth">
+            <Glyph symbol="open" />
+          </span>
+          <span aria-hidden className="absolute top-[3.5rem] bottom-0 left-0 w-px bg-rule" />
 
           <div className="pt-[2.35rem]">
             <p className="marker text-earth">{t.background.openTitle}</p>
-            <p className="mt-2 text-[0.9375rem] text-ink-2">{t.background.openDetail}</p>
+            <p className="mt-2 text-[0.9375rem] text-ink-2">
+              {t.hero.lookingFor}. {t.hero.rhythm}.
+            </p>
           </div>
         </div>
 
@@ -108,18 +93,13 @@ export function Timeline({ t }: { t: Dictionary }) {
 
             return (
               <li key={milestone.id} className="relative pb-14 pl-10 last:pb-0">
-                <Connector
-                  symbol={milestone.node}
-                  tone={milestone.node === 'live' ? 'earth' : 'muted'}
-                  geometry="start"
-                  bottomless={isLast}
-                />
+                <Connector symbol={milestone.node} last={isLast} />
 
                 <p className="datum text-ink-3">{milestone.period}</p>
 
                 {milestone.school && copy.school && (
                   <>
-                    <h3 className="mt-2 text-[1.375rem] leading-tight font-semibold tracking-[-0.015em] text-ink">
+                    <h3 className={titleClass}>
                       {copy.school.degree}
                     </h3>
                     <p className="mt-0.5 text-[0.9375rem] text-ink-2">
@@ -137,13 +117,7 @@ export function Timeline({ t }: { t: Dictionary }) {
                   <div className={hasSchool ? 'mt-5 pl-5' : ''}>
                     {hasSchool && <p className="marker text-ink-3">{t.background.companyLabel}</p>}
 
-                    <h3
-                      className={
-                        hasSchool
-                          ? 'mt-2 text-[0.9375rem] font-semibold text-ink'
-                          : 'mt-2 text-[1.375rem] leading-tight font-semibold tracking-[-0.015em] text-ink'
-                      }
-                    >
+                    <h3 className={hasSchool ? 'mt-2 text-[0.9375rem] font-semibold text-ink' : titleClass}>
                       {copy.company.role}
                     </h3>
                     <p className="mt-0.5 text-[0.9375rem] text-ink-2">

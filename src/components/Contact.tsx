@@ -10,10 +10,6 @@ const linkClass =
 
 function CopyEmail({ t }: { t: Dictionary }) {
   const [copied, setCopied] = useState(false)
-  // Sans presse-papiers (contexte non sécurisé, vieux navigateur), le bouton est masqué.
-  const [supported, setSupported] = useState(false)
-
-  useEffect(() => setSupported(Boolean(navigator.clipboard?.writeText)), [])
 
   useEffect(() => {
     if (!copied) return
@@ -21,13 +17,12 @@ function CopyEmail({ t }: { t: Dictionary }) {
     return () => window.clearTimeout(timer)
   }, [copied])
 
-  if (!supported) return null
+  // Sans presse-papiers (contexte non sécurisé, vieux navigateur), le bouton est masqué.
+  if (!navigator.clipboard?.writeText) return null
 
+  // En cas de refus du navigateur, le bouton garde simplement son libellé.
   const copy = () => {
-    navigator.clipboard.writeText(profile.email).then(
-      () => setCopied(true),
-      () => setCopied(false),
-    )
+    navigator.clipboard.writeText(profile.email).then(() => setCopied(true), () => {})
   }
 
   return (
@@ -44,15 +39,7 @@ function CopyEmail({ t }: { t: Dictionary }) {
 export function Contact({ t }: { t: Dictionary }) {
   return (
     <Section id="contact" title={t.contact.title}>
-      <p className="display text-[clamp(2.25rem,5.6vw,5rem)] leading-[0.95] text-balance text-ink">
-        {t.contact.headline.map((line) => (
-          <span key={line} className="block">
-            {line}
-          </span>
-        ))}
-      </p>
-
-      <p className="mt-9 max-w-[56ch] text-ink-2">{t.contact.lead}</p>
+      <p className="max-w-[56ch] text-ink-2">{t.contact.lead}</p>
 
       <div className="mt-12 flex flex-wrap items-center gap-x-7 gap-y-4 sm:mt-14">
         <a

@@ -3,7 +3,7 @@ import type { ProjectId } from '@/content/projects'
 import type { Dictionary } from '@/i18n/dictionary'
 
 // Schémas dessinés dans la même grammaire que le Parcours : boîtes, liaisons,
-// zone en pointillés. Les boîtes « mine » (ma partie) sont tracées en vert.
+// zone en pointillés.
 
 type BoxProps = {
   x: number
@@ -12,10 +12,9 @@ type BoxProps = {
   h: number
   title: string
   detail?: string
-  mine?: boolean
 }
 
-function Box({ x, y, w, h, title, detail, mine = false }: BoxProps) {
+function Box({ x, y, w, h, title, detail }: BoxProps) {
   const cx = x + w / 2
   const cy = y + h / 2
 
@@ -26,8 +25,8 @@ function Box({ x, y, w, h, title, detail, mine = false }: BoxProps) {
         y={y}
         width={w}
         height={h}
-        className={`fill-paper ${mine ? 'stroke-earth' : 'stroke-rule-strong'}`}
-        strokeWidth={mine ? 1.5 : 1}
+        className="fill-paper stroke-rule-strong"
+        strokeWidth={1}
       />
       {detail ? (
         <>
@@ -63,19 +62,7 @@ function Link({ x1, y1, x2, y2, head = true, marker }: LinkProps) {
   )
 }
 
-function Zone({
-  x,
-  y,
-  w,
-  h,
-  label,
-}: {
-  x: number
-  y: number
-  w: number
-  h: number
-  label: string
-}) {
+function Zone({ x, y, w, h, label }: Omit<BoxProps, 'title' | 'detail'> & { label: string }) {
   return (
     <>
       <rect
@@ -87,11 +74,7 @@ function Zone({
         className="stroke-rule-strong"
         strokeDasharray="4 4"
       />
-      <text
-        x={x + 12}
-        y={y + h - 12}
-        className="fill-ink-3 text-[10.5px] tracking-[0.12em] uppercase"
-      >
+      <text x={x + 12} y={y + h - 12} className="fill-ink-3 text-[12px]">
         {label}
       </text>
     </>
@@ -110,13 +93,13 @@ function Bernstein({ d, marker }: { d: Dictionary['projects']['diagram']; marker
       <Link x1={120} y1={268} x2={120} y2={299} marker={marker} />
       <Link x1={360} y1={300} x2={360} y2={269} marker={marker} />
       <Link x1={200} y1={326} x2={279} y2={326} marker={marker} />
-      <text x={240} y={316} textAnchor="middle" className="fill-ink-3 text-[11px]">
+      <text x={240} y={316} textAnchor="middle" className="fill-ink-3 text-[12px]">
         worker
       </text>
       <Box x={170} y={24} w={140} h={40} title="Internet" />
-      <Box x={140} y={112} w={200} h={52} title="Traefik" detail="reverse proxy, LB" mine />
+      <Box x={140} y={112} w={200} h={52} title="Traefik" detail="reverse proxy, LB" />
       <Box x={40} y={216} w={160} h={52} title="Vote" detail={d.webService} />
-      <Box x={280} y={216} w={160} h={52} title="Result" detail={d.webService} mine />
+      <Box x={280} y={216} w={160} h={52} title="Result" detail={d.webService} />
       <Box x={40} y={300} w={160} h={52} title="Redis" detail={d.queue} />
       <Box x={280} y={300} w={160} h={52} title="PostgreSQL" detail={d.storage} />
     </>
@@ -129,11 +112,11 @@ function Nexus({ d, marker }: { d: Dictionary['projects']['diagram']; marker: st
       <Zone x={100} y={148} w={280} h={240} label="Docker" />
       <Link x1={225} y1={96} x2={225} y2={175} marker={marker} />
       <Link x1={255} y1={176} x2={255} y2={97} marker={marker} />
-      <text x={270} y={140} className="fill-ink-3 text-[11px]">
+      <text x={270} y={140} className="fill-ink-3 text-[12px]">
         WebSockets
       </text>
       <Link x1={240} y1={232} x2={240} y2={299} marker={marker} />
-      <text x={252} y={270} className="fill-ink-3 text-[11px]">
+      <text x={252} y={270} className="fill-ink-3 text-[12px]">
         {d.history}
       </text>
       <Box x={140} y={40} w={200} h={56} title="Next.js" detail={d.client} />
@@ -144,16 +127,11 @@ function Nexus({ d, marker }: { d: Dictionary['projects']['diagram']; marker: st
 }
 
 const diagrams: Partial<
-  Record<
-    ProjectId,
-    { Draw: typeof Bernstein; alt: keyof Dictionary['projects']['diagram']; hasMine: boolean }
-  >
+  Record<ProjectId, { Draw: typeof Bernstein; alt: keyof Dictionary['projects']['diagram'] }>
 > = {
-  bernstein: { Draw: Bernstein, alt: 'bernsteinAlt', hasMine: true },
-  nexus: { Draw: Nexus, alt: 'nexusAlt', hasMine: false },
+  bernstein: { Draw: Bernstein, alt: 'bernsteinAlt' },
+  nexus: { Draw: Nexus, alt: 'nexusAlt' },
 }
-
-export const hasDiagram = (id: ProjectId) => id in diagrams
 
 export function ProjectDiagram({ id, t }: { id: ProjectId; t: Dictionary }) {
   const marker = useId().replace(/:/g, '')
@@ -164,39 +142,35 @@ export function ProjectDiagram({ id, t }: { id: ProjectId; t: Dictionary }) {
   const { Draw } = entry
 
   return (
-    <figure className="border border-rule bg-plate p-4 sm:p-7">
-      <figcaption className="flex flex-wrap justify-between gap-2">
-        <span className="marker text-ink-3">{d.caption}</span>
-        {entry.hasMine && (
-          <span className="marker flex items-center gap-2 text-earth">
-            <span aria-hidden className="size-2 border-[1.5px] border-earth" />
-            {d.mine}
-          </span>
-        )}
-      </figcaption>
+    <figure className="min-w-0 border border-rule bg-plate p-4 sm:p-7 xl:p-4">
+      <figcaption className="marker text-ink-3">{d.caption}</figcaption>
 
-      <svg
-        viewBox="16 16 448 380"
-        role="img"
-        aria-label={d[entry.alt]}
-        className="mx-auto mt-5 block h-auto w-full max-w-[480px] font-mono text-[12.5px]"
-      >
-        <defs>
-          <marker
-            id={marker}
-            viewBox="0 0 8 8"
-            refX="8"
-            refY="4"
-            markerWidth="7"
-            markerHeight="7"
-            markerUnits="userSpaceOnUse"
-            orient="auto"
-          >
-            <path d="M0 0 L8 4 L0 8 z" className="fill-ink-3" />
-          </marker>
-        </defs>
-        <Draw d={d} marker={marker} />
-      </svg>
+      {/* Sur mobile, le schéma garde une largeur minimale pour que ses textes restent
+          lisibles (environ 11-12px) et défile horizontalement dans son cadre. */}
+      <div className="-mx-4 mt-5 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">
+        <svg
+          viewBox="16 16 448 380"
+          role="img"
+          aria-label={d[entry.alt]}
+          className="mx-auto block h-auto w-full max-w-[480px] min-w-[26rem] font-mono text-[12.5px] sm:min-w-0"
+        >
+          <defs>
+            <marker
+              id={marker}
+              viewBox="0 0 8 8"
+              refX="8"
+              refY="4"
+              markerWidth="7"
+              markerHeight="7"
+              markerUnits="userSpaceOnUse"
+              orient="auto"
+            >
+              <path d="M0 0 L8 4 L0 8 z" className="fill-ink-3" />
+            </marker>
+          </defs>
+          <Draw d={d} marker={marker} />
+        </svg>
+      </div>
     </figure>
   )
 }

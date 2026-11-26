@@ -23,9 +23,9 @@ export const fr: Dictionary = {
 
   hero: {
     availability: "En recherche d'alternance",
-    role: "Étudiant en Master of Science à Epitech Paris, venu de l'électrotechnique.",
+    role: 'Étudiant en Master of Science à Epitech Paris',
     pitch:
-      "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. Je construis des projets pour apprendre en faisant, et je cherche une entreprise où continuer sur ce rythme.",
+      "Je me forme au développement logiciel, avec trois ans d'alternance en électrotechnique derrière moi. J'apprends en réalisant des projets, et je cherche une entreprise où continuer de cette façon.",
     lookingForLabel: 'Disponibilité',
     lookingFor: "Dès maintenant, jusqu'en août 2028",
     rhythmLabel: 'Rythme',
@@ -39,31 +39,26 @@ export const fr: Dictionary = {
 
   about: {
     title: 'À propos',
-    quote: {
-      before: '« Un poste source et un cluster posent au fond la même question : comment faire pour que ça ',
-      highlight: 'tienne debout',
-      after: ', et comment réagir quand ça tombe. »',
-    },
     paragraphs: [
-      "C'est pendant mon année d'ingénieur à l'INSA Strasbourg que j'ai découvert la programmation. Ce qui m'a accroché, c'est de voir tourner ce que je construis, un jeu qu'on peut lancer, un site qu'on peut parcourir, un résultat qui existe et qu'on peut essayer tout de suite. J'ai décidé d'en faire mon métier et je suis entré à Epitech l'année suivante.",
-      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, chez Enedis sur les postes source puis à la Compagnie des Transports Strasbourgeois. J'y ai pris l'habitude du travail en entreprise et des environnements où la rigueur n'est pas négociable. C'est de là que vient mon intérêt pour l'infrastructure et le DevOps.",
+      "J'ai découvert la programmation pendant mon année d'ingénieur à l'INSA Strasbourg. Ce qui m'a plu, c'est de voir tourner tout de suite ce que je construis. J'ai décidé d'en faire mon métier et je suis entré à Epitech l'année suivante.",
+      "Avant ça, j'ai passé trois ans en alternance en électrotechnique, d'abord chez Enedis sur les postes source, puis à la Compagnie des Transports Strasbourgeois. J'y ai appris à travailler en entreprise et à suivre des procédures strictes.",
+      "Sur un poste source, les installations ne doivent pas tomber en panne, et quand elles tombent, il faut intervenir vite. C'est ce qui m'attire aujourd'hui dans l'infrastructure et le DevOps.",
     ],
-    hobbiesLabel: 'Hors code',
+    hobbiesLabel: "Centres d'intérêt",
     hobbies: 'Lecture, tennis de table, billard.',
   },
 
   projects: {
     title: 'Projets',
     intro:
-      "Des projets menés dans le cadre de ma formation, presque tous en équipe. Le code de chacun est public.",
+      'Des projets réalisés pendant ma formation, presque tous en équipe. Tout le code est public.',
     viewSource: 'Voir le code',
     roleLabel: 'Mon rôle',
     otherProjects: 'Autres projets',
     diagram: {
       caption: "Schéma de l'architecture déployée",
-      mine: 'Ma partie',
       bernsteinAlt:
-        "Schéma de l'architecture de Bernstein : le trafic Internet passe par Traefik, qui répartit vers les services Vote et Result. Vote écrit dans Redis, un worker transfère vers PostgreSQL, que Result lit. Traefik et Result sont ma partie.",
+        "Schéma de l'architecture de Bernstein : le trafic Internet passe par Traefik, qui répartit vers les services Vote et Result. Vote écrit dans Redis, un worker transfère vers PostgreSQL, que Result lit.",
       nexusAlt:
         "Schéma de l'architecture de Nexus : le client Next.js échange en WebSockets avec le serveur Rust, qui conserve les données dans PostgreSQL et MongoDB. Le tout tourne dans Docker.",
       cluster: 'Cluster GKE multi-nœuds',
@@ -88,21 +83,19 @@ export const fr: Dictionary = {
         subtitle: 'Application de chat en temps réel',
         summary:
           "Une messagerie temps réel de type Discord : authentification, gestion des serveurs et des salons, échanges par WebSockets et historique des messages.",
-        role: "Projet Epitech à quatre, en Rust. Le langage était imposé : courbe d'apprentissage raide, mais résultat solide. J'ai pris en charge la coordination de l'équipe et mis en place Trello pour garder tout le monde aligné. Le vrai défi a été d'éviter les conflits de merge à quatre sur la même base de code.",
+        role: "Projet Epitech à quatre, en Rust, un langage imposé par l'école. Je me suis occupé de la coordination de l'équipe et j'ai mis en place un tableau Trello pour répartir les tâches. La principale difficulté a été d'éviter les conflits de merge à quatre sur le même code.",
       },
       epitale: {
         title: 'EPITALE',
         subtitle: 'Jeu de rôle en 2D',
         summary:
-          "Un RPG en vue de dessus développé en Java avec LibGDX : combat au tour par tour teinté de bullet hell, exploration, dialogues avec les PNJ et mécaniques de moralité.",
-        role: "Projet Epitech à trois, conduit selon les principes de la programmation orientée objet, avec diagrammes UML, couverture de tests JaCoCo et documentation Javadoc. Le jeu était ambitieux pour notre niveau de l'époque, mais nous l'avons livré.",
+          "Un RPG en vue de dessus développé en Java avec LibGDX : combats au tour par tour avec des phases de bullet hell, exploration, dialogues avec les PNJ et mécaniques de moralité.",
       },
       hungerjob: {
         title: 'HungerJob',
         subtitle: "Plateforme d'offres d'emploi",
         summary:
-          "Une plateforme d'annonces fullstack : authentification, gestion des offres et tableau de bord d'administration.",
-        role: "Projet Epitech à trois. J'ai travaillé sur une partie du frontend et sur l'API REST côté backend, en gérant les opérations CRUD. Une bonne première approche du développement fullstack.",
+          "Un site d'offres d'emploi fullstack : authentification, gestion des offres et tableau de bord d'administration.",
       },
     },
   },
@@ -110,7 +103,7 @@ export const fr: Dictionary = {
   skills: {
     title: 'Compétences',
     intro:
-      "Les technologies que j'ai réellement utilisées, en cours ou sur les projets ci-dessus.",
+      "Les technologies que j'ai utilisées en cours ou sur mes projets.",
     groups: {
       devops: 'DevOps & CI/CD',
       cloud: 'Cloud & orchestration',
@@ -129,7 +122,6 @@ export const fr: Dictionary = {
   background: {
     title: 'Parcours',
     openTitle: 'Alternance recherchée',
-    openDetail: "Dès maintenant, jusqu'en août 2028. 4 jours en entreprise, 1 jour à l'école.",
     companyLabel: 'En entreprise',
     milestones: {
       epitech: {
@@ -187,8 +179,7 @@ export const fr: Dictionary = {
 
   contact: {
     title: 'Contact',
-    headline: ['Parlons de', 'votre alternance.'],
-    lead: "Je cherche une alternance en informatique, disponible dès maintenant et jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire directement.",
+    lead: "Je cherche une alternance en informatique, disponible dès maintenant et jusqu'en août 2028, sur un rythme de 4 jours en entreprise et 1 jour à l'école. Le plus simple est de m'écrire par e-mail.",
     copy: "Copier l'adresse",
     copied: 'Adresse copiée',
     linkedinLabel: 'LinkedIn',
